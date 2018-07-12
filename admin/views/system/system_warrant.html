@@ -1,0 +1,443 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">角色授权</span>
+        </li>
+    </ul>
+    <!-- <button class="btn btn-sm btn-default pull-right">
+        <i class="fa fa-refresh"></i>
+        <span> 刷新</span>
+    </button> -->
+    <button class="btn btn-sm btn-default pull-right m-r" ng-click="goback()">
+        <i class="fa fa-mail-reply"></i>
+        <span> 返回</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel b-a">
+        <div class="panel-heading bg-light dk b-b">当前角色:{{roleName}}</div>
+        <div id="checkboxdiv" class="panel-body wrapper-xl">
+            <div class="panel m-b-lg b-a" ng-repeat="item in items">
+                <div  class="panel-heading bg-light lt  b-b ">
+                    <label class="checkbox-inline i-checks">
+                        <input name="permcategoryid" type="checkbox" ng-value="item.permissionsT.id" ng-click="selectAllItem($event,item)">
+                        <i></i>
+                        {{item.permissionsT.name}}
+                    </label>
+                </div>
+                <div name="permdiv" class="table-responsive">
+                    <table class="table table-bordered  b-t b-light">
+                        <tbody>
+                        <tr ng-repeat="list8item in item.permissionsTList">
+                            <td ng-repeat="tditem in list8item">
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" ng-value="tditem.id" ng-click="addMethodPermission($event,tditem.id)">
+                                    <i></i>
+                                    {{tditem.name}}
+                                </label>
+                            </td>                          
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <div class="panel m-b-lg b-a">
+                <div class="panel-heading bg-light lt  b-b ">
+                    <label class="checkbox-inline i-checks">
+                        <input type="checkbox" value="1">
+                        <i></i>
+                        研发主管
+                    </label>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered  b-t b-light">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel m-b-lg b-a">
+                <div class="panel-heading bg-light lt  b-b ">
+                    <label class="checkbox-inline i-checks">
+                        <input type="checkbox" value="1">
+                        <i></i>
+                        研发主管
+                    </label>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered  b-t b-light">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel m-b-lg b-a">
+                <div class="panel-heading bg-light lt  b-b ">
+                    <label class="checkbox-inline i-checks">
+                        <input type="checkbox" value="1">
+                        <i></i>
+                        研发主管
+                    </label>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered  b-t b-light">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                            <td>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" value="1">
+                                    <i></i>
+                                    研发主管
+                                </label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <div class="m-lg text-center">
+                <button class="btn btn-success w-sm" ng-click="save()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

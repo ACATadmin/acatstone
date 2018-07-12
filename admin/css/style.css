@@ -1,0 +1,141 @@
+.nav {
+    font-size: 12px;
+}
+
+.navi ul.nav li a {
+    padding-left: 45px;
+}
+
+.panel-default > .panel-heading {
+    color: #666666;
+    font-size: 12px;
+}
+
+tbody {
+    font-size: 12px;
+}
+
+.breadcrumb {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.table > thead > tr > th{
+    font-weight: normal !important;
+    font-size: 14px;
+}
+
+.table-one > tbody > tr > td:nth-child(2n+1) {
+    text-align: center;
+    background-color: #F9FAFC;
+    width: 165px;
+}
+
+.table-one > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.file_btn input {
+    width: 100%;
+    height: 100%;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    /*css属性——opcity不透明度，取值0-1*/
+    filter: alpha(opacity=0);
+    /*兼容IE8及以下--filter属性是IE特有的，它还有很多其它滤镜效果，而filter: alpha(opacity=0); 兼容IE8及以下的IE浏览器(如果你的电脑IE是8以下的版本，使用某些效果是可能会有一个允许ActiveX的提示,注意点一下就ok啦)*/
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.viewPic {
+    height: 50px;
+}
+
+.viewPic img {
+    width: 100%;
+    height: 100% !important;
+}
+
+.base {
+    position: relative;
+}
+
+.form-control:focus {
+
+    border-color: rgb(26, 188, 156);
+}
+
+.bg_b1 {
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    margin-top: -110px;
+    width: 100%;
+    height: 220px;
+    background-color: rgb(26, 188, 156);
+    background-image: url("../img/bg_signin.png");
+}
+
+.signin_box {
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    right: 30%;
+    margin-top: -200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+    left: 50%;
+    margin-left: -180px;
+}
+
+.signin_box .form-group {
+    position: relative;
+
+}
+
+.signin_box .form-control{
+    height: 50px;
+    color:#BCBCBC;
+    padding: 6px 42px;
+}
+
+.signin_box .l {
+    position: absolute;
+    font-size: 28px;
+    left: 10px;
+    color:#BCBCBC;
+    top: 11px;
+}
+
+.form-control{
+    color:#BCBCBC;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgb(204, 204, 204);
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: rgb(204, 204, 204);
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: rgb(204, 204, 204);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: rgb(204, 204, 204);
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: rgb(26, 188, 156);
+    border-color: rgb(26, 188, 156);
+}

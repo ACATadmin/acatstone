@@ -1,0 +1,27 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-transferemployee.html" />
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">案件移交</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <div ng-show="authError" class="alert alert-danger">
+                      <p> {{authError}}</p>
+                  </div>
+                    <label>选择需要移交的律师</label>
+                    <ui-select ng-model="selected.value" theme="bootstrap">
+                        <ui-select-match placeholder="请在列表中选择律师">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="itemm in people | filter: $select.search">
+                        <div ng-bind-html="itemm.name | highlight: $select.search"></div>
+                        <small ng-bind-html="itemm.email | highlight: $select.search"></small>
+                        <div ng-bind-html="itemm.id | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+                <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+            </div>
+        </div><!-- /.modal-content -->

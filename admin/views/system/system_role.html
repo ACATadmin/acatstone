@@ -1,0 +1,76 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">系统角色</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs" ng-click="reflushAll()">
+        <i class="fa fa-refresh"></i>
+        <span> 刷新</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-search"></i>
+            <span class="v-bottom">筛选查询</span>
+        </div>
+        <div class="panel-body clearfix">
+            <div class="inline padder-lg">
+                <label class="m-r-sm">角色名称:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" ng-model="searchname" placeholder="请输入角色名">
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-sm btn-default w-xs" type="button" ng-click="selectPage(0)">查询结果</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <div class="pull-left" style="padding-top: 5px"><i class="fa fa-list "></i>
+                <span class="v-bottom">角色列表</span></div>
+            <div class="pull-right">
+                <button security-html security-id="5b32085a8d6afe085d846e32"  class="btn btn-sm btn-default w-xs" type="button" ui-sref="app.system.role_add">添加</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered  b-t b-light text-center">
+                <thead style="background-color: #F9FAFC">
+                <tr>
+                    <th class="text-center">角色名称</th>
+                    <th class="text-center">角色描述</th>
+                    <th class="text-center">成员数量</th>
+                    <th class="text-center">添加时间</th>
+                    <th class="text-center">状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.roleName}}</td>
+                    <td>{{item.roleDescription}}</td>
+                    <td>{{item.members}}</td>
+                    <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td class="text-success" ng-if="item.status==1">启用</td>
+                    <td class="text-success" ng-if="item.status==0">禁用</td>
+                    <td>
+                        <a security-html security-id="5b320cf78d6a53d451bbd56e" class="m-l-xs m-r-xs text-success" ng-click="systemWarrant(item)">角色授权</a>
+                        <a security-html security-id="5b32085a8d6afe085d846e31" class="m-l-xs m-r-xs text-success" ng-click="systemRoleUpdate(item)">编辑</a>
+                        <a security-html security-id="5b32085a8d6afe085d846e33" class="m-l-xs m-r-xs text-success" ng-if="item.status==1" ng-click="disable(item)">禁用</a>
+                        <a security-html security-id="5b32085a8d6afe085d846e34" class="m-l-xs m-r-xs text-success" ng-if="item.status==0" ng-click="enable(item)">启用</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+
+            <div class="m-t-sm text-right">
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                            class="pagination-sm m-t-none m-b"
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
+            </div>
+        </footer>
+    </div>
+</div>

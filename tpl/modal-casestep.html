@@ -1,0 +1,21 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-casestep.html" />
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">更新案件状态</h4>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label>阶段现状</label>
+      <input type="text" class="inputName form-control" ng-model="item.step" placeholder="请输入阶段现状" required>
+    </div>
+    <div class="form-group">
+      <label>阶段备注</label>
+      <input type="text" class="inputNum form-control" ng-model="item.stepRemark" placeholder="请填写阶段备注" required>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+    <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+  </div>
+</div><!-- /.modal-content -->

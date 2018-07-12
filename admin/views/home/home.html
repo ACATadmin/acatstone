@@ -1,0 +1,35 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+    <div class="col w bg-light dk b-r bg-auto">
+        <div class="wrapper b-b bg" style="padding-left: 50px">
+            <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle-class="show"
+                    target="#email-menu"><i class="fa fa-bars"></i></button>
+            系统首页
+        </div>
+        <div class="hidden-sm hidden-xs" id="email-menu">
+            <nav ui-nav class="navi bg-diy">
+                <ul class="nav">
+                    <!--<li ui-sref-active="active">-->
+                        <!--<a ui-sref="app.home.home_content">-->
+                            <!--<span>• 系统首页</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <li ui-sref-active="active">
+                        <a ui-sref="app.home.information">
+                            <span>• 系统信息</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="app.home.journal">
+                            <span>• 登录日志</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col">
+        <div ui-view class="animated fadeInRight"></div>
+    </div>
+</div>
+
+

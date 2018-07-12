@@ -1,0 +1,24 @@
+<!-- navbar header -->
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs text-danger" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app" id="headerbtn">
+        <i class="inline text" style="width: .38rem">
+            <img src="img/GroupNormal.png" alt="" class="img-responsive">
+        </i>
+        <i class="inline text-active" style="width:.34rem;">
+            <img src="img/Page 1Normal_3.png" alt="" class="img-responsive">
+        </i>
+    </button>
+
+    <!-- brand -->
+    <div ng-controller="goIndexCtrl">
+        <a ng-click="goIndex()" class="navbar-brand" style="font-size:15px;">
+            <span class="">
+                <img src="img/logo.png" alt="." class=>
+            </span>
+            <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+        </a>
+    </div>
+    <!-- / brand -->
+
+</div>
+<!-- / navbar header -->

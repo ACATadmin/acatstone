@@ -1,0 +1,52 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">登录日志</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs" ng-click="reflushAll()">
+        <i class="fa fa-refresh"></i>
+        <span> 刷新</span>
+    </button>
+</div>
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-list "></i>
+            <span class="v-bottom">登录日志</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered  b-t b-light text-center">
+                <thead style="background-color: #F9FAFC">
+                <tr>
+                    <th class="text-center">用户名</th>
+                    <th class="text-center">登录时间</th>
+                    <th class="text-center">IP</th>
+                    <th class="text-center">地区</th>
+                    <th class="text-center">浏览器</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{item.ipaddress}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.browser}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="panel-footer">
+
+            <div class="m-t-sm text-right">
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                            class="pagination-sm m-t-none m-b"
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
+            </div>
+        </footer>
+
+    </div>
+</div>

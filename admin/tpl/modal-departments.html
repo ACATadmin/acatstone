@@ -1,0 +1,21 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-departments.html" />
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}部门</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>部门名</label>
+                    <input type="text" class="inputName form-control" ng-model="name" placeholder="请输入部门名">
+                </div>
+                <div class="form-group">
+                    <label>排序</label>
+                    <input type="number" class="inputNum form-control" ng-model="sort" placeholder="请填写部门排序">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+                <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+            </div>
+        </div><!-- /.modal-content -->

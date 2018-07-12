@@ -1,0 +1,24 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-addCategory.html" />
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group" ng-init="findAllType();">
+            <label class="col-lg-2 control-label">分类：</label>
+            <div class="col-lg-3">
+                <select ng-model="item.id" class="form-control" ng-select="item.id == ot.assessT.id" ng-options="ot.assessT.id as ot.assessT.name for ot in listtype"
+                    required>
+                </select>
+            </div>
+            <label class="col-lg-2 control-label"></label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+        <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+    </div>
+</div>
+<!-- /.modal-content -->

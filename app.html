@@ -1,0 +1,27 @@
+<!-- navbar -->
+<div data-ng-include=" 'header.html' " class="app-header navbar">
+</div>
+<!-- / navbar -->
+
+<!--menu -->
+<div id="asidediv" data-ng-include=" 'aside.html' " class="app-aside hidden-xs {{app.settings.asideColor}}">
+</div>
+<!--/ menu -->
+
+<!-- content -->
+<div class="app-content ">
+    <!--<div ui-butterbar></div>-->
+    <!--<a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>-->
+    <div class="app-content-body" ui-view></div>
+
+</div>
+<!-- /content -->
+
+<!-- loading -->
+
+<!-- / loading -->
+
+<div ui-loading=""></div>
+
+
+

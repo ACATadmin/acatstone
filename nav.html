@@ -1,0 +1,173 @@
+<div class="{{app.settings.navbarCollapseColor}} nav_aside " ng-controller="navCtrl">
+    <div class="panel padder-v no-border no-radius no-shadow m-b-none">
+        <!-- <div class="panel-heading b-b b-light">
+            <span class="text-xl font-bold">Market Chanel</span>
+        </div> -->
+        <ul class="list-group clearfix">
+            <li class="list-group-item has-on">
+                <a class="text-danger" ui-sref-active="text-danger" ui-sref="app.text_list({type:1})">
+                    <i>
+                        <img src="img/nav1.png" alt="">
+                    </i>
+                    <div class="text">
+                        <p>Market</p>
+                        <p>Forecasting</p>
+                    </div>
+                    <div class="mask">
+                    </div>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav2.png" alt="">
+                </i>
+                <div class="text">
+                    <p>ACE</p>
+                    <p>Indices</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav3.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Technical</p>
+                    <p>Anaysis</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav4.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Chance</p>
+                    <p>Discovery</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav5.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Intelligent</p>
+                    <p>Diagnosis</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav6.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Multi</p>
+                    <p>Data</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav7.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Risk</p>
+                    <p>Management</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav8.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Asset</p>
+                    <p>Allocation</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav9.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Trading</p>
+                    <p>Tools</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav10.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Derivatives</p>
+                    <p>Market</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav11.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Primary</p>
+                    <p>Market</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+            <li class="list-group-item">
+                <i>
+                    <img src="img/nav12.png" alt="">
+                </i>
+                <div class="text">
+                    <p>Others</p>
+                </div>
+                <div class="mask">
+                </div>
+            </li>
+        </ul>
+        <!-- <ul class="list-group text-sm" id="asideul" style="padding-left: 15px">
+            <li class="list-group-item">
+                <a class="text-danger" ui-sref-active="text-danger" ui-sref="app.text_list({type:1})">Alphacat
+                    Forecast</a>
+            </li>
+            <li class="list-group-item">
+                <a ui-sref="app.text_list({type:2})" ui-sref-active="text-danger">Alphacat Index</a>
+            </li>
+            <li class="list-group-item" style="border-bottom: 1px solid #edf1f2">
+                <a ui-sref-active="text-danger" ui-sref="app.text_list({type:3})">Alphacat Tools</a>
+            </li>
+        </ul> -->
+    </div>
+    <div class="panel no-border no-shadow no-radius m-b-none">
+        <!-- <div class="panel-heading b-b b-light">
+            <span class="text-xl font-bold">FAQ</span>
+        </div> -->
+        <div class="wrapper text-xl">
+            <p class="m-t" ng-show="islogin">
+                <a ui-sref="app.login" class="text-danger font-bold">Log in</a>
+            </p>
+            <p class="m-t" ng-show="islogout">
+                <p class="text-danger font-bold">{{email}}</p>
+            </p>
+            <p class="m-t" ng-show="islogout">
+                <a ng-click="logout()" class=" font-bold">Log out</a>
+            </p>
+            <p ng-show="islogin">
+                <a ui-sref="app.register" class="font-bold">Register</a>
+            </p>
+        </div>
+    </div>
+</div>

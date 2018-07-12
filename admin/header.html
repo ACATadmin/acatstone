@@ -1,0 +1,163 @@
+<!-- navbar header -->
+<div class="navbar-header box-shadow {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>
+    <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <!-- <a ui-sref="app.home.home_content" class="navbar-brand" style="width: 100%"> -->
+        <a class="navbar-brand" style="width: 100%">
+        <div>
+            <img src="img/logo.png" alt="." class="" style="max-height: 40px">
+        </div>
+
+        </a>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    <!-- </a> -->
+    <!-- / brand -->
+
+</div>
+<!-- / navbar header -->
+
+<!-- navbar collapse-->
+<div class="collapse  navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+
+    <!-- link and dropdown -->
+    <ul class="nav navbar-nav hidden-xs">
+        <li ui-sref-active="active">
+            <a ui-sref="app.home.journal">
+                <span>首页</span>
+            </a>
+        </li>
+        <li security-html security-id="5a279bf977c8b07d6e69511d" ui-sref-active="active">
+            <a ui-sref="app.application.list">
+                <span>应用</span>
+            </a>
+        </li>
+        <li security-html security-id="5a279bf977c8b07d6e69511e" ui-sref-active="active">
+            <a href ui-sref="app.content.banner">
+                <span>内容</span>
+            </a>
+        </li>
+        <li security-html security-id="5a279bf977c8b07d6e695120" ui-sref-active="active">
+            <a href ui-sref="app.user.list">
+                <span>用户</span>
+            </a>
+        </li>
+        <li security-html security-id="5a279bf977c8b07d6e695121" ui-sref-active="active">
+            <a href ui-sref="app.system.list">
+                <span>系统</span>
+            </a>
+        </li>
+    </ul>
+    <!-- / link and dropdown -->
+
+
+    <!-- / search form -->
+    <ul class="nav navbar-nav navbar-right padder-lg" ng-controller="headerController">
+
+        <li class="dropdown" dropdown >
+            <a href class="dropdown-toggle clear" dropdown-toggle>
+                <!-- <span class="thumb-sm avatar pull-left m-t-n-sm m-b-n-sm m-r-sm">
+                  <img src="img/a0.jpg" alt="...">
+                </span> -->
+                <span class="hidden-sm hidden-md">{{app.employeeT.realname}}</span> <b class="caret"></b>
+            </a>
+            <!-- dropdown -->
+            <div class="dropdown-menu w-xxl animated fadeInRight">
+                <div class="panel">
+                    <div class="panel-heading clearfix b-b">
+                        <span class="text-muted pull-left">账户信息</span>
+                        <a ui-sref="app.system.modify_password" class=" pull-right">
+                            <span class="text-success"> 修改密码</span>
+                        </a>
+                    </div>
+                    <div class="panel-body wrapper-lg">
+
+                        <p>
+                            <span> 本次登录：</span>
+                            <span class="text-dark"> {{app.employeeLogT.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                        </p>
+                        <p class="m-b-lg m-t-lg">
+                            <span> 登录地区：</span>
+                            <span class="text-dark"> {{app.employeeLogT.location}} (IP：{{app.employeeLogT.ipaddress}})</span>
+                        </p>
+                        <p>
+                            <span> 上次登录：</span>
+                            <span class="text-dark"> {{app.employeeLogT.lastTime | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- / dropdown -->
+        </li>
+        <!-- <li>
+            <a ui-sref="app.home.home_content" style="font-size: 24px;padding-bottom: 11px">
+                <i class="fa fa-home "></i>
+            </a>
+            <a style="font-size: 24px;padding-bottom: 11px">
+                <i class="fa fa-home "></i>
+            </a>
+        </li> -->
+        <!-- <li class="hidden-xs">
+            <a ui-fullscreen style="font-size: 24px;padding-bottom: 11px"></a>
+        </li> -->
+        <!--<li class="dropdown" dropdown>-->
+            <!--<a href class="dropdown-toggle" dropdown-toggle style="font-size: 21px;padding-bottom: 11px">-->
+                <!--<i class="icon-bell fa-fw"></i>-->
+                <!--<span class="visible-xs-inline">Notifications</span>-->
+                <!--<span class="badge badge-sm up bg-danger pull-right-xs">2</span>-->
+            <!--</a>-->
+            <!--&lt;!&ndash; dropdown &ndash;&gt;-->
+            <!--<div class="dropdown-menu w-xl animated fadeInUp">-->
+                <!--<div class="panel bg-white">-->
+                    <!--<ul class="list-group">-->
+                        <!--<li class=" list-group-item">-->
+                            <!--<a href="" class="text-muted">-->
+                                <!--<small> 订单提示</small>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class=" list-group-item">-->
+                            <!--<a href="">-->
+                                <!--<span class="badge bg-success text-white pull-right">15</span>-->
+                                <!--待付款订单-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class=" list-group-item">-->
+                            <!--<a href="">-->
+                                <!--<span class="badge bg-success text-white pull-right">15</span>-->
+                                <!--待发货订单-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class=" list-group-item">-->
+                            <!--<a href="">-->
+                                <!--<span class="badge bg-success text-white pull-right">15</span>-->
+                                <!--已发货订单-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class=" list-group-item">-->
+                            <!--<a href="">-->
+                                <!--<span class="badge bg-success text-white pull-right">15</span>-->
+                                <!--已完成订单-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; / dropdown &ndash;&gt;-->
+        <!--</li>-->
+        <li>
+            <a style="font-size: 24px;padding-bottom: 11px" ng-click="logout()">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </li>
+    </ul>
+    <!-- / navbar right -->
+
+</div>
+<!-- / navbar collapse -->

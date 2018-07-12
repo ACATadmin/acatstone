@@ -1,0 +1,39 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">角色设置</span>
+        </li>
+    </ul>
+    <!-- <button class="btn btn-sm btn-default pull-right w-xs" ng-click="goback()">
+        <i class="fa fa-mail-reply"></i>
+        <span>返回</span>
+    </button> -->
+
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">当前角色:运营专员</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered  b-t b-light">
+                    <tbody>
+                    <tr>
+                        <td ng-repeat="item in items">
+                            <label class="checkbox-inline i-checks">
+                                <input type="checkbox" ng-value="item.id" ng-click="addEmpRole(item.id)">
+                                <i></i>
+                                {{item.roleName}}
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="m-lg text-center">
+                <button class="btn btn-success w-sm" ng-click="save()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="wrapper ">
+    <h2 class="h2  text-lg font-bold" style="padding: .25rem 0">Log in</h2>
+    <div class="help_text text-danger text-md">
+        {{errormsg}}
+    </div>
+    <form class="text-sm">
+        <div class="form-group">
+            <label for="" class="">Email</label>
+            <input type="text" class="form-control input-lg" ng-model="item.email">
+        </div>
+        <div class="form-group">
+            <label for="" class="">Password</label>
+            <input type="password" class="form-control input-lg " ng-model="item.password">
+        </div>
+        <div class="padder-v-md">
+            <button class="btn btn-lg btn-danger" ng-click="login()" ng-disabled="checkFromVal()">Log in</button>
+        </div>
+    </form>
+    <div class="help-block text-sm">
+        <p>
+            <a ui-sref="app.forgot_password" class="text-danger">Forgot your password?</a>
+        </p>
+        <p>
+            <a ui-sref="app.register" class="text-danger">Register as a new user?</a>
+        </p>
+    </div>
+</div>
+<div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">
+    © 2018 Alphacat Beta
+</div>

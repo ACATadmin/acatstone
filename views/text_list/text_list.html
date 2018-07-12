@@ -1,0 +1,142 @@
+<ul class="list-group no-radius list-ul" ng-repeat="item in items">
+    <li class="list-group-item  clearfix" ng-click="goDetails(item.id)">
+        <a href="" class=" thumb pull-left  list_icon">
+            <img ng-src="{{app.BaseUrl+item.icon}}" alt="">
+        </a>
+        <!-- <div class="clear">
+            <a href="" class="list_head" style="">{{item.name}}</a>
+            <div class="list_text">{{item.solgan}}
+            </div>
+        </div> -->
+        <div class="clear">
+            <!--<a href="" class="list_head" style="">{{item.name}}</a >-->
+            <div class="tit">
+                <a href="" class="list_head" style="">{{item.name}}</a > <i>{{item.price}}</i>
+            </div>
+            <div class="list_text">{{item.solgan}}
+            </div>
+        </div>
+    </li>
+    <!-- <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon" style="margin:.24rem .26rem 0 0;width: .38rem">
+            <img src="img/2.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+                ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin
+            </div>
+        </div>
+    </li> -->
+
+
+
+    <!-- <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon" style="margin:.24rem .26rem 0 0;width: .38rem">
+            <img src="img/2.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/3.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/4.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/5.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/6.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon" style="width: .50rem">
+            <img src="img/7.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/8.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item  clearfix" ui-sref="app.forecast_details">
+        <a href="" class=" thumb pull-left list_icon">
+            <img src="img/10.png" alt="">
+        </a>
+        <div class="clear">
+            <a href="" class="list_head">Real-Time BTC Forecasting</a>
+            <div class="list_text">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                euismod
+                tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                sollicitudin
+            </div>
+        </div>
+    </li> -->
+
+</ul>
+<div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">
+    © 2018 Alphacat Beta
+</div>

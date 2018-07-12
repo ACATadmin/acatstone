@@ -1,0 +1,71 @@
+<div class="wrapper to_predict">
+    <div class="clearfix">
+        <h3 class="h3 pull-left text-xl text-danger font-bold" style="padding-top: .1rem">{{tag}}</h3>
+        <div class="pull-right text-danger text-right" style="font-size: .2rem">
+            <!-- <p class="m-b-none"><span class="font-bold">DATE</span>:16/Apr/2018</p> -->
+            <p class="m-b-none">
+                <span class="font-bold">DATE:</span>{{time | date:'yyyy-MM-dd'}}</p>
+            <p class="m-b-none">{{time | date:'HH:mm'}}(UTC)</p>
+        </div>
+    </div>
+</div>
+<div class="eachts">
+    <!--<div class="text-sm text-center font-bold">-->
+    <!--Real-Time BTC Forecasting-->
+    <!--</div>-->
+    <div id="predict" style="height:400px; width: 100%"></div>
+</div>
+<div class="wrapper to_predict" style="padding-top: 0">
+    <div class="clearfix wrapper">
+        <div class="circular pull-left">
+            <div class="circular_text text-danger">
+                <p style="font-size: .24rem;margin-bottom: 5px">Average change</p>
+                <p style="font-size: .56rem">{{averagechange}}%</p>
+            </div>
+        </div>
+        <div class="circular pull-right">
+            <div class="circular_text text-danger">
+                <p style="font-size: .24rem;margin-bottom: 5px">Rise Probability</p>
+                <p style="font-size: .56rem">{{RiseProbability}}%</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-muted" style="font-family: Athelas;">
+        <p class="notes">
+            Notes
+        </p>
+        <div class="notes_text">
+            <p>1. {{tag}} prices are quoted in US Dollars.</p>
+            <p>2. The initial vertical line indicates the forecasting time (UTC).</p>
+            <p>3. The curve at the left side of the initial vertical line indicates the recent historical 1 min {{tag}} prices.</p>
+            <p>4. The curve at the right side of the initial vertical line indicates the forecasting {{tag}} prices in 15 min, 30 min and 45 min after the forecasting time.</p>
+            <p>5. The prediction “Average Change” is an average % price change in 15 min after the forecasting time.</p>
+            <p>6. The prediction “Rise Probability” is likelihood that the prices would rise in 15 min after the forecasting time.</p>
+            <!-- <div class="text_indent">
+                <p> 1) The middle curve: the three points represent the average price of the future 15 minutes, 30 minutes, and
+                    45 minutes.</p>
+
+                <p> 2) The upper curve: the three points represent the average price of the future 15 minutes, 30 minutes, and
+                    45 minutes plus the average forecast deviation.</p>
+
+                <p>3) The lower curves: the three points represent the average price of the future 15 minutes, 30 minutes, and
+                    45 minutes minus the average forecast deviation.</p>
+            </div> -->
+        </div>
+    </div>
+    <div class="clearfix exclamation_text" style="font-family: Athelas;">
+        <a href="" class="avatar icon_exclamation thumb ">
+            <img src="img/icon_exclamation.png" alt="">
+        </a>
+        <div class=" text-danger error_text" style="font-size: .19rem;line-height: .32rem">
+            <p>This information is neither a recommendation, an offer to sell nor solicitation of an offer to purchase any investment.
+            </p>
+            <p>You should take full responsibility for your own profits and losses.
+            </p>
+            <p>The Alphacat team shall have the final interpretation.</p>
+        </div>
+    </div>
+</div>
+<div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">
+    © 2018 Alphacat Beta
+</div>

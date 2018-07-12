@@ -1,0 +1,25 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+    <div class="col w bg-light dk b-r bg-auto">
+        <div class="wrapper b-b bg" style="padding-left: 50px">
+            <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle-class="show"
+                    target="#email-menu"><i class="fa fa-bars"></i></button>
+            用户管理
+        </div>
+        <div class="hidden-sm hidden-xs" id="email-menu">
+            <nav ui-nav class="navi bg-diy">
+                <ul class="nav">
+                    <li security-html security-id="5a279bf977c8b07d6e695120"  ui-sref-active="active">
+                        <a ui-sref="app.user.list">
+                            <span>• 用户列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col">
+        <div ui-view class="animated fadeInRight"></div>
+    </div>
+</div>
+
+

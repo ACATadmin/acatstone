@@ -1,0 +1,82 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">用户列表</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs" ng-click="reflushAll()">
+        <i class="fa fa-refresh"></i>
+        <span> 刷新</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-search"></i>
+            <span class="v-bottom">筛选查询</span>
+        </div>
+        <div class="panel-body clearfix">
+            <div class="inline padder-lg">
+                <label class="m-r-sm">用户编号:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" ng-model="search.number" placeholder="请输入用户编号">
+            </div>
+            <div class="inline padder-lg">
+                <label class="m-r-sm">用户名称:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" ng-model="search.nickname" placeholder="请输入用户名称">
+            </div>
+            <div class="pull-right padder-lg">
+                <button class="btn btn-sm btn-default w-xs" type="button" ng-click="selectPage(0)">查询结果</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-list "></i>
+            <span class="v-bottom">用户列表</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered  b-t b-light text-center">
+                <thead style="background-color: #F9FAFC">
+                <tr>
+                    <th class="text-center">用户编号</th>
+                    <th class="text-center">用户名</th>
+                    <th class="text-center">每日免费次数</th>
+                    <th class="text-center">注册来源</th>
+                    <th class="text-center">注册时间</th>
+                    <th class="text-center">最后登录</th>
+                    <th class="text-center">状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.usernumb}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.freeCount}}</td>
+                    <td ng-if="item.source==0">PC</td>
+                    <td ng-if="item.source==1">H5</td>
+                    <td>{{item.registTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{item.lastLoginTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td class="text-success" ng-if="item.status==1">启用</td>
+                    <td class="text-success" ng-if="item.status==0">禁用</td>
+                    <td>
+                        <a security-html security-id="5b30c9328d6a72c52a9e8554" class="m-l-xs m-r-xs text-success" ng-click="editUser(item)">编辑</a>
+                        <a security-html security-id="5b30c9328d6a72c52a9e8556" class="m-l-xs m-r-xs text-success" ng-click="enable(item)" ng-if="item.status==0">启用</a>
+                        <a security-html security-id="5b30c9328d6a72c52a9e8555" class="m-l-xs m-r-xs text-success" ng-click="disable(item)" ng-if="item.status==1">禁用</a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+
+            <div class="m-t-sm text-right">
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                            class="pagination-sm m-t-none m-b"
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
+            </div>
+        </footer>
+    </div>
+</div>

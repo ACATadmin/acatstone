@@ -1,0 +1,64 @@
+<div class="blog-post">
+    <div class="">
+        <img ng-src="{{appScreens}}" alt="" class="img-full">
+    </div>
+    <div class="wrapper">
+        <h3 class="text_head font-bold">{{item.name}}</h3>
+        <div class="" style="padding-bottom: .42rem;font-style: oblique">
+            <a class="m-r-md text-muted" style="font-size: .24rem">
+                <i class="inline" style="width: .22rem">
+                    <img src="img/Page1Normal.png" alt="" class="img-responsive">
+                </i>
+                Developer：{{item.author}}
+            </a>
+            <a class="m-l-md text-muted" style="font-size: .24rem">
+                <i class="inline" style="width: .19rem">
+                    <img src="img/Page1Normal_1.png" alt="" class="img-responsive">
+                </i>
+                Version：{{item.appversion}}
+            </a>
+            <br>
+            <a class="text-muted" style="font-size: .24rem">
+                <i class="inline" style="width: .2rem">
+                    <img src="img/Page1Normal_2.png" alt="" class="img-responsive">
+                </i>
+                Publish time：{{item.createTime | date:'yyyy-MM-dd'}}
+            </a>
+        </div>
+        <div class="text-muted blog_text" style="margin-bottom: .4rem">
+            {{item.summary}}
+            <!-- <p style="margin-bottom: .4rem"> Alphacat “BTC Real-Time-Forecast” application is the first to be released
+                AI-powered real-time
+                prediction in
+                a series of applications supporting multiple cryptocurrencies. Adopting the US patented PRNN technology,
+                it
+                would allow to easily obtain future price forecasts in a scientific way.</p>
+            <p style="margin-bottom: .4rem">Using this application you would be able to obtain BTC price forecast at any
+                given time, enabling you to
+                quickly seize near-future trading opportunities. The time intervals for the forecasts would be 15
+                minutes,
+                30 minutes, and 45 minutes.</p>
+            <p style="margin-bottom: .4rem">
+                [PRNN] The PRNN technology used in this product has been patented by the “United States Patent and
+                Trademark Office”. The product uses BTC historical transaction data in its learning process to make
+                scientific predictions of the price change fluctuation.
+            </p> -->
+        </div>
+        <div class="text-center">
+            <button class="btn btn-lg btn-danger" ng-click="goDetails(item.id)" >
+                <i class="inline" style="width: .41rem">
+                    <img src="img/Page1Normal_3.png" alt="" class="img-responsive">
+                </i>
+                <span class="font-bold"
+                      style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Forcast</span>
+            </button>
+
+        </div>
+        <p class="text-danger text-center free_times" style="font-size: .3rem">
+            Free Times : <span>{{useCount}}</span>
+        </p>
+    </div>
+</div>
+<div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">
+    © 2018 Alphacat Beta
+</div>

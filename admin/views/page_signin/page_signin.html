@@ -1,0 +1,38 @@
+<div ng-controller="SigninFormController" ng-init="app.settings.container = false;">
+    <div class="bg_b1"></div>
+
+    <div class="signin_box w-xxl box-shadow">
+        <div class="panel" style="height: 100%">
+            <div class="panel-heading wrapper-xs bg-success no-border"></div>
+            <div class="panel-body  padder-lg padder-v">
+                <p class="text-center font-bold text-success block m-t-xxl m-b-lg" style="font-size: 24px">Alphacat Appstore</p>
+                <div class="m-b-lg">
+                    <form name="form" class="form-validation">
+                        <div class="text-danger wrapper text-center" ng-show="authError">
+                            {{authError}}
+                        </div>
+                        <div class="form-group m-b-md">
+                            <i class="fa fa-user l"></i>
+                            <input type="text"  placeholder="请输入用户名称"
+                                   class="form-control"
+                                   ng-model="user.loginName"
+                                   required>
+                        </div>
+                        <div class="form-group m-b-md">
+                            <i class="fa fa-lock l"></i>
+                            <input type="password"  placeholder="请输入登陆密码"
+                                   class="form-control"
+                                   ng-model="user.password" required>
+                        </div>
+                        <div class="form-group m-b-md">
+                            <button type="submit" class="btn btn-lg btn-success btn-block" ng-click="login()"
+                                    ng-disabled='form.$invalid'>登录
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center app-footer" style="left: 0;width: 100%" ng-include="'../admin/page_footer.html'"></div>

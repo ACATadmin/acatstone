@@ -1,0 +1,27 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-add-personnel.html" />
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div ng-show="authError" class="alert alert-danger">
+                <p> {{authError}}</p>
+            </div>
+            <label>选择部门成员</label>
+            <ui-select ng-model="selected.value" theme="bootstrap">
+                <ui-select-match placeholder="请在列表中选择部门成员">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="itemm in people | filter: $select.search">
+                    <div ng-bind-html="itemm.name | highlight: $select.search"></div>
+                    <small ng-bind-html="itemm.email | highlight: $select.search"></small>
+                    <div ng-bind-html="itemm.id | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+        <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+    </div>
+</div><!-- /.modal-content -->

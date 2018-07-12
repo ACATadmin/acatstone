@@ -1,0 +1,9 @@
+<div class="select_add col-sm-3"><select class="form-control" ng-change="provinceChange(true)" ng-disabled="hasall" ng-model="province" ng-options="p.name as p.name for p in provinceList">
+  <option value="">选择省份</option>
+</select></div>
+<div class="select_add col-sm-3"><select class="form-control" ng-change="cityChange(true)" ng-disabled="hasall" ng-model="city" ng-options="c.name as c.name for c in cityList">
+  <option value="">选择城市</option>
+</select></div>
+<div class="select_add col-sm-3"><select class="form-control" ng-change="areaChange(true)" ng-disabled="hasall" ng-model="area" ng-options="a as a for a in areaList">
+<option value="">选择区县</option>
+</select></div>

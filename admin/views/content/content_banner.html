@@ -1,0 +1,83 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">banner管理</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs">
+        <i class="fa fa-refresh"></i>
+        <span>刷新</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-search"></i>
+            <span class="v-bottom">筛选查询</span>
+        </div>
+        <div class="panel-body clearfix">
+            <div class="inline padder-lg">
+                <label class="m-r-sm">应用编号:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用编号">
+            </div>
+            <div class="inline padder-lg">
+                <label class="m-r-sm">应用名称:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用名称">
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-sm btn-default w-xs" type="button">查询结果</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+
+        <div class="panel-heading clearfix">
+            <div class="pull-left" style="padding-top: 5px">
+                <i class="fa fa-list "></i>
+                <span class="v-bottom">banner列表</span>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-sm btn-default m-l w-xs" type="button" security-html security-id="5b320cf78d6a53d451bbd566" ui-sref="app.content.banner_edit_add">添加
+                </button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered  b-t b-light text-center">
+                <thead style="background-color: #F9FAFC">
+                <tr>
+                    <th class="text-center">主题</th>
+                    <th class="text-center">链接</th>
+                    <th class="text-center">位置</th>
+                    <th class="text-center">状态</th>
+                    <th class="text-center">更新时间</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.urlpath}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>
+                        <a class="m-l-xs m-r-xs text-success">查看</a>
+                        <a class="m-l-xs m-r-xs text-success" security-html security-id="5b320cf78d6a53d451bbd565" ui-sref="app.content.banner_edit_add">编辑</a>
+                        <a security-html security-id="5b320cf78d6a53d451bbd567" class="m-l-xs m-r-xs text-success"  ng-if="item.status==0">上架</a>
+                        <a security-html security-id="5b320cf78d6a53d451bbd568" class="m-l-xs m-r-xs text-success"  ng-if="item.status==1">下架</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+
+            <div class="m-t-sm text-right">
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                            class="pagination-sm m-t-none m-b"
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
+            </div>
+        </footer>
+    </div>
+</div>

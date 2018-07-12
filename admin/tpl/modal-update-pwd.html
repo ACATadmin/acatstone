@@ -1,0 +1,25 @@
+<!-- 新建模态框（Modal） -->
+<script type="text/ng-template" id="modal-update-pwd.html" />
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">修改密码</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>原密码</label>
+            <input type="password" class="inputName form-control" ng-model="item.oldPassword" placeholder="请输入原密码">
+        </div>
+        <div class="form-group">
+            <label>新密码</label>
+            <input type="password" class="inputNum form-control" ng-model="item.password" placeholder="请填入新密码">
+        </div>
+        <div class="form-group">
+            <label>确认密码</label>
+            <input type="password" class="inputNum form-control" ng-model="item.confirmPassword" placeholder="请填入确认密码">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+        <button type="button" class="btn btn-primary okNew" ng-click="ok()">提交</button>
+    </div>
+</div><!-- /.modal-content -->

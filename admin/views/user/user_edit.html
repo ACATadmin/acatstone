@@ -1,0 +1,47 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">用户编辑</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs" ng-click="goback()">
+        <i class="fa fa-mail-reply "></i>
+        <span>返回</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">用户编辑</div>
+        <div class="panel-body">
+
+            <form class="form-horizontal w-auto-xs" style="width: 900px;margin: 100px auto">
+                <div class="form-group">
+                    <div class="">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            用户名：
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" disabled value="{{item.email}}" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            每日免费次数：
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" ng-model="item.freeCount" placeholder="" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-success w-sm" ng-click="updateUser()">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
