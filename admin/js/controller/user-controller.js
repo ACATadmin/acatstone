@@ -67,6 +67,10 @@ app.controller("users", function ($scope, $http, $state, modal, $modal) {
     }
     $scope.updateUser = function () {
         //修改用户的免费次数
+        if($scope.item.freeCount <0 ||$scope.item.freeCount >999){
+            alert("免费次数只能为0到999!");
+            return
+        }
         $http.put($scope.app.BaseUrl + "/admin/user", $scope.item).success(function (response) {
             alert("修改成功!");
             $state.go("app.user.list");

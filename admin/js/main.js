@@ -39,8 +39,9 @@ angular.module('app')
                 realname: "",
                 permissions: {},
                 // BaseUrl:"http://lq.myhe120.com:8086",
-                // BaseUrl:"http://127.0.0.1:8086",
-                BaseUrl:"http://acatstore-api.alphacat.io",
+                // BaseUrl:"http://120.55.171.133:28082",
+                BaseUrl:"https://acatstore-api.alphacat.io",
+                // BaseUrl:"http://127.0.0.1:8080",
                 employeeT:{},
                 employeeLogT:{}                
             }

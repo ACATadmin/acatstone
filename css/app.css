@@ -3950,6 +3950,9 @@ a.text-danger:hover {
 .text-danger {
     color: #FF5722;
 }
+.text-danger2 {
+    color: #02dc1a;
+}
 
 .text-danger-lt {
     color: #f26767;

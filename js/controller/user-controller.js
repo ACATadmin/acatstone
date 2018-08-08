@@ -75,7 +75,13 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
             })
 
         }
-    }).controller("loginCtl", function ($scope, $http, $state, modal, $modal, $rootScope) {
+    }).controller("loginCtl", function ($scope, $http, $state, $stateParams, modal, $modal, $rootScope) {
+        //判断是否登录-如果登录了，就跳转已登录页
+        // $http.get($scope.app.BaseUrl + "/api/user/islogin").success(function (response) {
+        //     $state.go("app.haslogin");
+        // })
+
+
         $scope.item = {
             "email": "",
             "password": ""
@@ -102,7 +108,15 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
                     //发送给父级$rootScope获取用户信息接口
                     // 广播事件
                     $rootScope.$broadcast('siginSuccess', true);
-                    $state.go("app.home");
+                    // $state.go("app.home");
+                    //跳转页面
+                    // console.log($stateParams.reurl);
+                    var absurl = $stateParams.reurl;
+                    if (absurl != undefined && absurl != "") {
+                        location.href = absurl;
+                    } else {
+                        $state.go("app.home");
+                    }
                     // $state.reload();                    
                 } else {
                     if (data.data.state == 2) {
@@ -121,8 +135,20 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
             })
         }
 
-    })
-    .controller("forgotpassword", function ($scope, $http, $state, modal, $stateParams, $modal) {
+    }).controller("hasloginCtl", function ($scope, $http, $state, $stateParams, modal, $modal, $rootScope) {
+        $http.get($scope.app.BaseUrl + "/api/user/islogin").success(function (response) {
+            $scope.employeeT = response.data;
+        })
+        $scope.logout = function () {
+            $http.get($scope.app.BaseUrl + "/api/user/logout").success(function (response) {
+                sessionStorage.removeItem("X-Auth-Token-H5");
+                layer.msg("Logout success", {
+                    offset: ['90%', '33%']
+                });
+                $state.go("app.login");
+            })
+        }
+    }).controller("forgotpassword", function ($scope, $http, $state, modal, $stateParams, $modal) {
 
         $scope.item = {
             "email": "",
@@ -181,11 +207,11 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
                 repasswordboolean = false;
             }
             //两个密码是否一样
-            if($scope.item.repassword != $scope.item.password){
+            if ($scope.item.repassword != $scope.item.password) {
                 repasswordboolean = true;
                 passwordboolean = true;
-                $scope.errorEmailmsg = "• The password and confirmation password must be the same"                
-            }else{
+                $scope.errorEmailmsg = "• The password and confirmation password must be the same"
+            } else {
                 repasswordboolean = false;
                 passwordboolean = false;
             }
@@ -219,7 +245,9 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
         $scope.verify = function () {
             $scope.item.email = $stateParams.email
             $http.post($scope.app.BaseUrl + "/api/user/fotgetverify", $scope.item).success(function (response) {
-                $state.go("app.forgot_password_3",{"code":$scope.item.code});
+                $state.go("app.forgot_password_3", {
+                    "code": $scope.item.code
+                });
             }).error(function (data) {
                 $scope.errorEmailmsg = data.msg
             })

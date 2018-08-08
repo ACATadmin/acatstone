@@ -15,6 +15,6 @@ app.config(function ($urlRouterProvider, $stateProvider) {
         }).state('app.user.edit', {
             url: "/edit/:id",
             controller:"user",
-            templateUrl: "/admin/views/user/user_edit.html"
+            templateUrl: "/admin/views/user/user_edit.html?v=1"
         })
 })

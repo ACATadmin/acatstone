@@ -1,4 +1,14 @@
-<div class="wrapper ">
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <!-- brand -->
+    <a ui-sref="app.home" class="navbar-brand" style="font-size:15px;">
+        <span class="">
+            <img src="img/logo.png" alt="." class=>
+        </span>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    </a>
+    <!-- / brand -->
+</div>
+<div class="wrapper nfooter">
     <h2 class="h2  text-lg font-bold" style="padding: .25rem 0">Log in</h2>
     <div class="help_text text-danger text-md">
         {{errormsg}}
@@ -26,5 +36,29 @@
     </div>
 </div>
 <div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">
-    © 2018 Alphacat Beta
+    {{app.alphacatVersion}}
+</div>
+ <div class="footer" ng-controller="footerCtrl">
+    <ul>
+        <li>
+            <a ui-sref="app.markets">
+                <img src="img/markets.png" alt="">
+                <!--<img src="img/markets.png" alt="">-->
+                <p>Markets</p>
+            </a>
+        </li>
+        <li>
+            <a ui-sref="app.media">
+                <img src="img/media.png" alt="">
+                <p>Media</p>
+            </a>
+        </li>
+        <li class="active">
+            <a ng-click="goLogin()">
+                <img src="img/me-a.png" alt="">
+                <!--<img src="img/me.png" alt="" >-->
+                <p>Me</p>
+            </a>
+        </li>
+    </ul>
 </div>

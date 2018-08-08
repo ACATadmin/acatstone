@@ -54,8 +54,8 @@
                     <td>{{item.usernumb}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.freeCount}}</td>
-                    <td ng-if="item.source==0">PC</td>
-                    <td ng-if="item.source==1">H5</td>
+                    <td ng-if="item.source==1">PC</td>
+                    <td ng-if="item.source==0">H5</td>
                     <td>{{item.registTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td>{{item.lastLoginTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td class="text-success" ng-if="item.status==1">启用</td>

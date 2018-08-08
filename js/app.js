@@ -2,7 +2,7 @@ var app = angular.module('app', [
     'ui.router', 'app-directive', 'ui.bootstrap', 'ui.load', 'app-modal'
 ])
 
-app.factory('httpInterceptor', function ($q, $injector) {
+app.factory('httpInterceptor', function ($q, $injector,$location) {
     return {
         // 可选，拦截成功的请求
         request: function (config) {
@@ -13,7 +13,7 @@ app.factory('httpInterceptor', function ($q, $injector) {
             //     config.headers["x-auth-token"] = sessionStorage.getItem("X-Auth-Token-H5");
             // }
             config.headers["x-auth-token"] = sessionStorage.getItem("X-Auth-Token-H5");
-
+            console.log("request:"+config.headers["x-auth-token"])
             // ...
             return config || $q.when(config);
         },
@@ -34,8 +34,10 @@ app.factory('httpInterceptor', function ($q, $injector) {
             // 进行预处理
             // ....
             if(response.headers("x-auth-token")!=null){
+                console.log("response:"+response.headers("x-auth-token"))
                 sessionStorage.setItem("X-Auth-Token-H5", response.headers("x-auth-token"));
             }
+            // console.log($location.absUrl());
             return response || $q.when(reponse);
         },
 
@@ -43,11 +45,9 @@ app.factory('httpInterceptor', function ($q, $injector) {
         responseError: function (response) {
             // 对失败的响应进行处理var
             var state = $injector.get('$state');
-            var modal = $injector.get('modal');
-            var statename = state.current.name
             if (response.status == 401) {
                 layer.msg("please log in again!")
-                state.go("app.login");
+                state.go("app.login",{"reurl":$location.absUrl()});
                 // return $q.defer(response)
             } else if (response.status == 403) {
                 layer.msg("Unauthorized!")

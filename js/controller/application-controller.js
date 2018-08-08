@@ -3,29 +3,33 @@ app.controller("applications", function ($scope, $http, $state, $stateParams, mo
   $scope.type = $stateParams.type;
   //获取列表
   $http.get($scope.app.BaseUrl + "/api/application?page=0&size=10&type=" + $scope.type).success(function (response) {
-    $scope.items = response.data.content; 
+    $scope.items = response.data.content;
   }).error(function (data) {
-     layer.msg(data.msg,{offset:['90%','33%']});   
+    layer.msg(data.msg, {
+      offset: ['90%', '33%']
+    });
   })
   //查看详情
   $scope.goDetails = function (id) {
     $state.go("app.forecast_details", {
-      "id": id,
-      "type":$scope.type
+      "appid": id,
+      "type": $scope.type
     });
   }
 }).controller("application", function ($scope, $http, $state, $stateParams, modal, $modal) {
   // $scope.islogin = false;
   $scope.useCount = 0;
   //获取详情
-  $http.get($scope.app.BaseUrl + "/api/application/" + $stateParams.id).success(function (response) {
+  $http.get($scope.app.BaseUrl + "/api/application/" + $stateParams.appid).success(function (response) {
     $scope.item = response.data.applicationT;
     $scope.useCount = response.data.allCount;
     $scope.appScreens = $scope.app.BaseUrl + $scope.item.appScreens;
     // layer.msg("获取列表!",{offset:'b'});        
   }).error(function (data) {
-     layer.msg(data.msg,{offset:['90%','33%']});   
-     
+    layer.msg(data.msg, {
+      offset: ['90%', '33%']
+    });
+
   })
   //判断是否登录
   // $http.get($scope.app.BaseUrl + "/api/user/isloginapp").success(function (response) {
@@ -44,11 +48,27 @@ app.controller("applications", function ($scope, $http, $state, $stateParams, mo
   $scope.goDetails = function (id) {
     //如果登录-扣次数-跳转
     // if ($scope.islogin) {
-      //调用接口进行数字减少操作
-      $state.go("app.to_predict",{appid:id});
+    //调用接口进行数字减少操作
+    $state.go("app.to_predict", {
+      "appid": id,
+      "type": $stateParams.type
+    });
     // } else {
-      //没登录-跳转去登录      
-      // $state.go("app.login");
+    //没登录-跳转去登录      
+    // $state.go("app.login");
     // }
   }
+  //返回上一页
+  $scope.gobackpage = function () {
+    $state.go("app.text_list", {
+      "type": $stateParams.type
+    });
+  }
+}).controller("lacktimeController", function ($scope, $http, $state, $stateParams, modal, $modal) {
+    //返回上一页
+    $scope.gobackpage = function () {
+      $state.go("app.text_list", {
+        "type": $stateParams.type
+      });
+    }
 })

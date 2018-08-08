@@ -53,4 +53,3 @@ app.controller("navCtrl", function ($scope, $http, $state, modal, $modal, $rootS
         $state.go("app.home");
     }
 })
-
