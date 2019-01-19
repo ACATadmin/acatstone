@@ -1,0 +1,75 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">充值记录</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right w-xs" ng-click="reflushAll()">
+        <i class="fa fa-refresh"></i>
+        <span>刷新</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-search"></i>
+            <span class="v-bottom">筛选查询</span>
+        </div>
+        <div class="panel-body clearfix">
+            <div class="inline padder-lg">
+                <label class="m-r-sm">用户名:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" ng-model="search.username" placeholder="请输入用户名">
+            </div>
+            <div class="inline padder-lg">
+                <label class="m-r-sm">操作人:</label>
+                <input type="text" class="input-sm form-control w-sm inline v-middle" ng-model="search.employeename" placeholder="请输入操作人">
+            </div>
+            <div class="pull-right padder-lg">
+                <button class="btn btn-sm btn-default w-xs m-r-sm" type="button" ng-click="selectPage(0)">查询结果</button>
+                <button class="btn btn-sm btn-default w-xs" type="button" >导出</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-list "></i>
+            <span class="v-bottom">充值记录</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered  b-t b-light text-center">
+                <thead style="background-color: #F9FAFC">
+                <tr>
+                    <th class="text-center">用户名</th>
+                    <th class="text-center">充值产品</th>
+                    <th class="text-center">充值次数</th>
+                    <th class="text-center">充值时间</th>
+                    <th class="text-center">充值入口</th>
+                    <th class="text-center">操作人</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.username}}</td>
+                    <td>{{item.appName}}</td>
+                    <td>{{item.rechargeCount}}</td>
+                    <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td ng-if="item.source==1">PC</td>
+                    <td ng-if="item.source==0">H5</td>
+                    <td ng-if="item.source==2">后台</td>
+                    <td>{{item.employeeName}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+
+            <div class="m-t-sm text-right">
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                            class="pagination-sm m-t-none m-b"
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
+            </div>
+        </footer>
+    </div>
+</div>

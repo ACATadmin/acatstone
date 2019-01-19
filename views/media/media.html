@@ -16,22 +16,65 @@
     </a>
     <!-- / brand -->
 </div>
-<div class="blog-post articleItem">
+<div class="banner">
+    <div ng-if="flag==1" owl-carousel class="owl-carousel img-wrap" id="owl-item">
+        <a owl-carousel-item ng-repeat="photo in photos"  href="{{photo.urlpath}}" class="item" ><img ng-src="{{app.BaseUrl+photo.bannerimg}}" class="img-responsive"></a>
+    </div>
+    <img ng-if="flag==0" src="img/mediabg.png" alt="">
+    <!-- <a  href="{{item.urlpath}}"><img ng-if="flag" ng-src="{{app.BaseUrl+item.bannerimg}}" alt=""></a> -->
+</div>
+<div class="blog-post mediaItem">
     <div class="wrapper">
         <div class="mt">
-            <img src="img/mediaimg.png" alt="">
-            <p class="tit">
-                The latest blockchain news
-            </p>
+            <ul>
+                <li  id="first" ng-click="type($event,0,0)" class="on">
+                    Hot
+                </li>
+                <li  id="second" ng-click="type($event,1,0)">
+                    News
+                </li>
+                <li ng-click="type($event,2,0)">
+                    FAQ
+                </li>
+                <li ng-click="type($event,3,0)" >
+                    Blog
+                </li>
+            </ul>
         </div>
         <div class="mc">
-            <p></p>
+            <ul>
+                <li ng-repeat="item in items" ui-sref="app.detail({id:item.id})">
+                    <div class="img-box">
+                        <img ng-src="{{app.BaseUrl+item.imgPath}}" alt="">
+                    </div>
+                    <div class="txt-box">
+                        <p>
+                            {{item.title}}
+                        </p>
+                        <div class="userinfo" style="bottom:15px !important;">
+                            <img src="img/user.png" alt="">
+                            <span>{{item.source}}</span>
+                            <span>
+                                {{item.createTime | date:'yyyy-MM-dd'}}
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li ng-show="loading" class="opts">
+                    <img src="img/loading.gif" alt="" class="loadingGif">
+                    <span>
+                        loading
+                    </span>
+                </li>
+                <li  ng-click="loadData(status,page)" ng-hide="loading || last"  class="opts">
+                    <img src="img/more-down.png" alt="" class="moreImg">
+                    <span>
+                        read more
+                    </span>
+                </li>
+            </ul>
         </div>
-        <div class="mb">
-            <a >
-                Coming&nbsp;&nbsp;Soon
-            </a>
-        </div>
+        
     </div>
 
      <div class="footer" ng-controller="footerCtrl">

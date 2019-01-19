@@ -1,0 +1,103 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">指数配置</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right" ng-click="goback()">
+        <i class="fa fa-refresh"></i>
+        <span>返回</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">指数配置</div>
+        <div class="panel-body">
+            <form class="form-horizontal w-auto-xs" style="width: 900px;margin: 0 auto">
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            当前指数除数：
+                        </label>
+                        <div class="col-sm-7">
+                            <input class="form-control" value="{{divisor}}" disabled/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">当前TOP10</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered  b-t b-light">
+                    <tbody>
+                        <tr ng-repeat="item in top10_items">
+                            <td  ng-repeat="coin in item">
+                                {{coin.symbol}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">当前指数样本池</div>
+            <div class="panel-body">
+                    <div class="table-responsive">
+                            <table class="table table-bordered  b-t b-light">
+                                <tbody>
+                                <tr ng-repeat="items in pool_items">
+                                    <td ng-repeat="item in items">
+                                        <label class="checkbox-inline i-checks">
+                                            <input type="checkbox" ng-click="addEmpRole(item.id)">
+                                            <i></i>
+                                            {{item.symbol}}
+                                        </label>
+                                    </td>
+                                    
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                    </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">通知邮箱配置</div>
+        <div class="panel-body">
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <div class="col-sm-7">
+                            <input type="text" ng-model="email" class="form-control" placeholder="邮箱">
+                        </div>
+                        <div class="col-sm-4">
+                                <button class="btn btn-sm btn-default w-xs" ng-click="saveEmail()" type="button">添加</button>
+                            </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 50px;">
+                    <table class="table table-bordered  b-t b-light text-center">
+                            <thead style="background-color: #F9FAFC">
+                            <tr>
+                                <th class="text-center">邮箱</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="email in emails">
+                                    <td>{{email}}</td>
+                                    <td>
+                                        <a class="m-l-xs m-r-xs text-success" ng-click="deleteEmail(email)">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+        </div>
+    </div>
+</div>

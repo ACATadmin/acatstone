@@ -1,0 +1,288 @@
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs text-danger" id="btn" ng-click="gobackpage()">
+        <!--<i class="inline text " style="width: .38rem">-->
+        <!--<img src="img/GroupNormal.png" alt="" class="img-responsive">-->
+        <!--</i>-->
+        <i class="inline" style="width:.4rem;">
+            <img src="img/back.png" alt="" class="img-responsive">
+        </i>
+    </button>
+    <!-- brand -->
+    <a ui-sref="app.home" class="navbar-brand" style="font-size:15px;">
+        <span class="">
+            <img src="img/logo.png" alt="." class=>
+        </span>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    </a>
+    <!-- / brand -->
+</div>
+<div class="banner riskB">
+    <img ng-src="{{appScreens}}" alt=""  class="img-full" style="display: block">
+</div>
+
+<div class="blog-post b-bg selectPage">
+    <div class="wrapper">
+        <div class="select-wrap">
+            <ul>
+                    <!-- class="select" -->
+                <li ng-repeat="item in items">
+                    <a id="{{item.symbol}}" ng-click="coinClick(item)">
+                        <i>
+                            <img src="img/{{item.symbol}}.png" alt="">
+                        </i>
+                        <p>{{item.symbol}}</p>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a>
+                        <i>
+                            <img src="img/Litecoin Icon.png" alt="">
+                        </i>
+                        <p>Litecoin LTC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/IOTA.png" alt="">
+                        </i>
+                        <p>IOTA</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/Ethereum Icon .png" alt="">
+                        </i>
+                        <p>Ethereum ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/BitConnect.png" alt="">
+                        </i>
+                        <p>BitConnect BCC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/ETH logo.png" alt="">
+                        </i>
+                        <p>ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRP logo.png" alt="">
+                        </i>
+                        <p>XRP</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/NEO logo.png" alt="">
+                        </i>
+                        <p>NEO</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRM logo.png" alt="">
+                        </i>
+                        <p>XRM</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/USDT logo.png" alt="">
+                        </i>
+                        <p>USDT</p>
+                    </a>
+                </li>
+
+                <li class="select">
+                    <a>
+                        <i>
+                            <img src="img/1.png" alt="">
+                        </i>
+                        <p>Bitcoins BTC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/Litecoin Icon.png" alt="">
+                        </i>
+                        <p>Litecoin LTC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/IOTA.png" alt="">
+                        </i>
+                        <p>IOTA</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/Ethereum Icon .png" alt="">
+                        </i>
+                        <p>Ethereum ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/BitConnect.png" alt="">
+                        </i>
+                        <p>BitConnect BCC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/ETH logo.png" alt="">
+                        </i>
+                        <p>ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRP logo.png" alt="">
+                        </i>
+                        <p>XRP</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/NEO logo.png" alt="">
+                        </i>
+                        <p>NEO</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRM logo.png" alt="">
+                        </i>
+                        <p>XRM</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/USDT logo.png" alt="">
+                        </i>
+                        <p>USDT</p>
+                    </a>
+                </li>
+
+                <li class="select">
+                    <a>
+                        <i>
+                            <img src="img/1.png" alt="">
+                        </i>
+                        <p>Bitcoins BTC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/Litecoin Icon.png" alt="">
+                        </i>
+                        <p>Litecoin LTC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/IOTA.png" alt="">
+                        </i>
+                        <p>IOTA</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/Ethereum Icon .png" alt="">
+                        </i>
+                        <p>Ethereum ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/BitConnect.png" alt="">
+                        </i>
+                        <p>BitConnect BCC</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/ETH logo.png" alt="">
+                        </i>
+                        <p>ETH</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRP logo.png" alt="">
+                        </i>
+                        <p>XRP</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/NEO logo.png" alt="">
+                        </i>
+                        <p>NEO</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/XRM logo.png" alt="">
+                        </i>
+                        <p>XRM</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i>
+                            <img src="img/USDT logo.png" alt="">
+                        </i>
+                        <p>USDT</p>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+        <div class="text-center" style="margin-top: 30px;">
+            <button class="btn btn-lg btn-danger" ng-click="goCompare(item)">
+                <i class="inline" style="width: .41rem;">
+                    <img src="img/icon-risk.png" alt="" class="img-responsive">
+                </i>
+                <span class="font-bold" style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Compare</span>
+            </button>
+        </div>
+        <p class="text-danger text-center free_times" style="font-size: .3rem">
+            Free Times :
+            <span>{{useCount}}</span>
+        </p>
+    </div>
+</div>
+<div class="wrapper b-t l-version l-version-d b-bg" style="font-size: .26rem;">
+    {{app.alphacatVersion}}
+</div>

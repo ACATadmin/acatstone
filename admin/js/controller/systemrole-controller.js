@@ -149,7 +149,7 @@ app.controller("sysRoles", function ($scope, $http, $state, modal, $modal) {
       //取消选择
       //判断这一组是不是都没选中了
       var ishavechecked = false;
-      $(event.target).parents("tr").find(":checkbox").each(function () {
+      $(event.target).parents("tbody").find(":checkbox").each(function () {
         if (this.checked) {
           ishavechecked = true;
         }

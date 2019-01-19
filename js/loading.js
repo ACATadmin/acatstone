@@ -10,6 +10,8 @@ angular.module('app')
                     el.removeClass('hide').addClass('active');
                     if(toState.name == "app.to_predict"){
                         $http.get("https://acatstore-api.alphacat.io/api/user/islogin").success(function(){
+                        // $http.get("http://47.92.79.48:28080/api/user/islogin").success(function(){
+                            // $http.get("http://localhost:8080/api/user/islogin").success(function(){
                             // $state.go("app.to_predict")
                         }).error(function(){
                             event.preventDefault();

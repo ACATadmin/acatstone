@@ -4,7 +4,7 @@
             <span class="text-muted">文章管理</span>
         </li>
     </ul>
-    <button class="btn btn-sm btn-default pull-right w-xs">
+    <button ng-click="reflushAll()" class="btn btn-sm btn-default pull-right w-xs">
         <i class="fa fa-refresh"></i>
         <span> 刷新</span>
     </button>
@@ -18,15 +18,21 @@
         </div>
         <div class="panel-body clearfix">
             <div class="inline padder-lg">
-                <label class="m-r-sm">应用编号:</label>
-                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用编号">
+                <label class="m-r-sm">文章标题:</label>
+                <input type="text" ng-model="search.title" class="input-sm form-control w-sm inline v-middle" placeholder="请输入文章标题">
             </div>
             <div class="inline padder-lg">
-                <label class="m-r-sm">应用名称:</label>
-                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用名称">
-            </div>
+                    <label class="m-r-sm">文章类型:</label>
+                    <select type="text" ng-model="search.type" class="input-sm form-control w-sm inline v-middle">
+                        <option value="">全部</option>
+                        <option value="0"> Hot </option>
+                        <option value="1"> News </option>
+                        <option value="2"> FAQ </option>
+                        <option value="3"> Blog </option>
+                    </select>
+                </div>
             <div class="pull-right">
-                <button class="btn btn-sm btn-default w-xs" type="button">查询结果</button>
+                <button ng-click="selectPage(0)" class="btn btn-sm btn-default w-xs" type="button">查询结果</button>
             </div>
         </div>
     </div>
@@ -38,7 +44,7 @@
                 <span class="v-bottom">文章列表</span>
             </div>
             <div class="pull-right">
-                <button class="btn btn-sm btn-default m-l w-xs" type="button" security-html security-id="5b320cf78d6a53d451bbd56b" ui-sref="app.content.banner_edit_add">添加
+                <button class="btn btn-sm btn-default m-l w-xs" type="button" security-html security-id="5b320cf78d6a53d451bbd56b" ui-sref="app.content.text_edit_add">添加
                 </button>
             </div>
         </div>
@@ -50,23 +56,28 @@
                     <th class="text-center">类型</th>
                     <th class="text-center">发布时间</th>
                     <th class="text-center">来源</th>
+                    <th class="text-center">状态</th>
                     <th class="text-center">操作人</th>
                     <th class="text-center">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>发布了一个新产品</td>
-                    <td>常见问题</td>
-                    <td>2017-08-05 15:47:44</td>
-                    <td>官方</td>
-                    <td>张三</td>
+                <tr ng-repeat="item in items">
+                    <td>{{item.title}}</td>
+                    <td ng-if="item.type ==0">Hot</td>
+                    <td ng-if="item.type ==1">News</td>
+                    <td ng-if="item.type ==2">FAQ</td>
+                    <td ng-if="item.type ==3">Blog</td>
+                    <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{item.source}}</td>
+                    <td ng-if="item.status==1">上架中</td>
+                    <td ng-if="item.status==0">未上架</td>
+                    <td>{{item.employeeName}}</td>
                     <td>
-                        <a class="m-l-xs m-r-xs text-success">查看</a>
-                        <a class="m-l-xs m-r-xs text-success" security-html security-id="5b320cf78d6a53d451bbd56a" ui-sref="app.content.text_edit_add">编辑</a>
-                        <a security-html security-id="5b320cf78d6a53d451bbd56c" class="m-l-xs m-r-xs text-success">上架</a>
-                        <a security-html security-id="5b320cf78d6a53d451bbd56d" class="m-l-xs m-r-xs text-success">下架</a>
-
+                        <!-- <a class="m-l-xs m-r-xs text-success">查看</a> -->
+                        <a class="m-l-xs m-r-xs text-success" security-html security-id="5b320cf78d6a53d451bbd56a" ng-click="edit(item.id)">编辑</a>
+                        <a ng-if="item.status==0"  security-html security-id="5b320cf78d6a53d451bbd56c" ng-click="shelf(item)" class="m-l-xs m-r-xs text-success">上架</a>
+                        <a ng-if="item.status==1"  security-html security-id="5b320cf78d6a53d451bbd56d" ng-click="dropoff(item)" class="m-l-xs m-r-xs text-success">下架</a>
                     </td>
                 </tr>
 
@@ -76,9 +87,9 @@
         <footer class="panel-footer">
 
             <div class="m-t-sm text-right">
-                <!-- <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
+                <pagination total-items="totalElements" ng-model="number" max-size="5" items-per-page="size"
                             class="pagination-sm m-t-none m-b"
-                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination> -->
+                            boundary-links="true" rotate="false" num-pages="totalPages"></pagination>
             </div>
         </footer>
     </div>

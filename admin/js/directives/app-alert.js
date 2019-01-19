@@ -43,6 +43,27 @@ modalModule.provider("modal",function(){
       return defer.promise;
     }
 
+    function formEmail(success,cancel) {
+      var defer = $q.defer();
+      var modalInstance = $modal.open({
+        templateUrl: '/admin/tpl/modal.html',
+        controller:function($scope,$modalInstance){
+          $scope.ok = function () {
+            success()
+            $modalInstance.close();
+          };
+          $scope.cancel = function () {
+            if(cancel!=null){
+              cancel()
+            }
+            $modalInstance.dismiss("cancel");
+          };
+        }
+      });
+
+      return defer.promise;
+    }
+
     function imagecrop(size) {
       var defer = $q.defer();
       var modalInstance = $modal.open({
@@ -75,6 +96,9 @@ modalModule.provider("modal",function(){
       },
       dialog: function (content,success,cancel) {
         return dialog(content, success,cancel);
+      },
+      formEmail:function (success,cancel) {
+        return dialog(success,cancel);
       },
       imagecrop:function (size) {
         return imagecrop(size)

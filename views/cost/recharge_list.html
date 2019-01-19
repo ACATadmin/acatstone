@@ -1,0 +1,80 @@
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs text-danger" id="btn" ui-sref="app.haslogin">
+        <!--<i class="inline text " style="width: .38rem">-->
+        <!--<img src="img/GroupNormal.png" alt="" class="img-responsive">-->
+        <!--</i>-->
+        <i class="inline" style="width:.4rem;">
+            <img src="img/back.png" alt="" class="img-responsive"> </i>
+    </button>
+    <!-- brand -->
+    <a ui-sref="app.home" class="navbar-brand" style="font-size:15px;">
+        <span class="">
+            <img src="img/logo.png" alt="." class=> </span>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    </a>
+    <!-- / brand -->
+</div>
+<div class="blog-post costList">
+    <div class="wrapper">
+        <div class="mt">
+            <p>Recharge record</p>
+        </div>
+        <div class="mc">
+            <ul>
+                <li ng-repeat="item in items">
+                    <div class="icon-box">
+                        <img ng-src="{{item.img}}" alt="">
+                    </div>
+                    <div class="txt-box">
+                        <p class="title">
+                            {{item.appName}}
+                        </p>
+                        <p class="time">
+                            {{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}
+                        </p>
+                        <span class="price">
+                            {{item.rechargeCount}}
+                        </span>
+                    </div>
+                </li>
+               
+                <li  ng-show="loading" class="opts">
+                    <img src="img/loading.gif" alt="" class="loadingGif">
+                    <span>
+                        loading
+                    </span>
+                </li>
+                <li ng-click="loadData(page)" ng-hide="loading || last" class="opts">
+                    <img src="img/more-down.png" alt="" class="moreImg">
+                    <span>
+                        read more
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer" ng-controller="footerCtrl">
+        <ul>
+            <li>
+                <a ui-sref="app.markets">
+                    <img src="img/markets.png" alt="">
+                    <!--<img src="img/markets.png" alt="">-->
+                    <p>Markets</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="app.media">
+                    <img src="img/media.png" alt="">
+                    <p>Media</p>
+                </a>
+            </li>
+            <li class="active" >
+                <a ng-click="goLogin()">
+                    <img src="img/me-a.png" alt="">
+                    <!--<img src="img/me.png" alt="" >-->
+                    <p>Me</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

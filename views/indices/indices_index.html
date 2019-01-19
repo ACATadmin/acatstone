@@ -1,0 +1,154 @@
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs text-danger" id="btn" ng-click="gobackpage()">
+        <!--<i class="inline text " style="width: .38rem">-->
+        <!--<img src="img/GroupNormal.png" alt="" class="img-responsive">-->
+        <!--</i>-->
+        <i class="inline" style="width:.4rem;">
+            <img src="img/back.png" alt="" class="img-responsive">
+        </i>
+    </button>
+    <!-- brand -->
+    <a ui-sref="app.home" class="navbar-brand" style="font-size:15px;">
+        <span class="">
+            <img src="img/logo.png" alt="." class=>
+        </span>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    </a>
+    <!-- / brand -->
+</div>
+
+<div class="blog-post b-bg comparePage">
+    <div class="wrapper">
+        <h3 class="tit">
+            {{item.name}}
+        </h3>
+        <div class="info">
+            <a class=" ">
+                <i class="inline">
+                    <img src="img/Page1Normal.png" alt="" class="img-responsive">
+                </i>
+                Developer：{{item.author}}
+            </a>
+            <a class="">
+                <i class="inline">
+                    <img src="img/Page1Normal_2.png" alt="" class="img-responsive">
+                </i>
+                Publish time：{{item.createTime | date:'yyyy-MM-dd'}}
+            </a>
+            <a class=" ">
+                <i class="inline">
+                    <img src="img/versionb.png" alt="" class="img-responsive">
+                </i>
+                Version：{{item.appversion}}
+            </a>
+        </div>
+        <div class="name">
+            Trend  Chart
+        </div>
+
+        <div class="echartI">
+            <div id="main" style="width:100%;height:4.45rem"></div>
+        </div>
+
+        <h3 class="tit">
+            Compare With
+        </h3>
+        <div class="lists">
+            <div ng-click="coinData($event,'bitcoin','BTC')" class="item">
+                <a>
+                    BTC
+                </a>
+            </div>
+            <div ng-click="coinData($event,'ethereum','ETH')" class="item">
+                <a>
+                    ETH
+                </a>
+            </div>
+            <div ng-click="coinData($event,'neo','NEO')" class="item">
+                <a>
+                    NEO
+                </a>
+            </div>
+
+            <div ng-click="coinData($event,'bitcoin-cash','BCH')" class="item">
+                <a>
+                    BCH
+                </a>
+            </div>
+        </div>
+
+        <h3 class="tit">
+            Notes
+        </h3>
+        <div class="notes">
+            <p>
+                The application targets the indexes of the leading currency in order to find the best long-term investment target.
+            </p>
+            <p>
+                The index application sample adopts dynamic real-time data-catching methods to find the largest and most liquid TOP-50 currency
+                in the current market of the index sample pool. Relying on our big data algorithm, TOP10 selects the top currency as the index component currency.
+            </p>
+        </div>
+        <h3 class="tit">
+            FAQ
+        </h3>
+        <div class="faqs">
+            <ul>
+                <li>
+                    <p class="q">
+                        Q: What is the standard currency unit of the index?
+                    </p>
+                    <p class="a">
+                        A: All prices, (including market capitalization and transaction amounts), of the index are denominated in US dollars (USD), and are set in the UTC time zone.
+                    </p>
+                </li>
+                <li>
+                    <p class="q">
+                        Q: How long is the index’s adjustment period?
+                    </p>
+                    <p class="a">
+                        A: The index component currency is adjusted to be recalculated every 30 days, and the currencies in the sample pool are calculated in real time.
+                    </p>
+                </li>
+                <li>
+                    <p class="q">
+                        Q: Why is the adjustment cycle of the constituent currency carried out monthly?
+                    </p>
+                    <p class="a">
+                        A: Different from the quarterly adjustment index of the traditional financial market, the application has adopted monthly adjustments, mainly to meet the fluctuations of the digital currency market and other large changes. Due to market volatility, the previous component currency may have a shrinking market value and is not representative of the broader market. There is also a new currency market value that rises to become a representative currency, so it needs to be adjusted regularly.
+                        <br>
+                        However, if the adjustment period is too frequent (for example, requires daily adjustments), the component currency is unstable, which makes some users who want to operate according to the index component confused, as such, the adjustment period is set to one month.
+                    </p>
+                </li>
+                <li>
+                    <p class="q">
+                        Q: How many currencies does the application provide for comparison within the index?
+                    </p>
+                    <p class="a">
+                        A: Different from the quarterly adjustment index of the traditional financial market, the application has adopted monthly adjustments, mainly to meet the fluctuations of the digital currency market and other large changes. Due to market volatility, the previous component currency may have a shrinking market value and is not representative of the broader market. There is also a new currency market value that rises to become a representative currency, so it needs to be adjusted regularly.
+                        <br>
+                        However, if the adjustment period is too frequent (for example, requires daily adjustments), the component currency is unstable, which makes some users who want to operate according to the index component confused, as such, the adjustment period is set to one month.
+                    </p>
+                </li>
+                <li>
+                    <p class="q">
+                        Q: Will financial derivatives related to the index be provided in the future?
+                    </p>
+                    <p class="a">
+                        A: The development team and the application itself do not provide any investment decision-making advice, but we have not ruled out future cooperation with third parties to issue financial derivatives purchase services related to the index.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="warning">-->
+            <!--<i>-->
+                <!--<img src="img/gth.png" alt="">-->
+            <!--</i>-->
+            <!--<div class="warnings">-->
+                <!--*This information is neither a recommendation, or an offer to sell nor solicitation of an offer to purchase any investment.-->
+                <!--You should take full responsibility for your own profits and losses.-->
+                <!--The Alphacat team shall have the final interpretation.-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>

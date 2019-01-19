@@ -11,8 +11,12 @@ app.config(function($urlRouterProvider,$stateProvider){
         controller:"banners",
         templateUrl: "/admin/views/content/content_banner.html"
     }).state('app.content.banner_edit_add', {
-        url: "/banner_edit_add",
+        url: "/banner_edit_add/:id",
         controller:"bannerEditCtrl",
         templateUrl: "/admin/views/content/banner_edit_add.html"
+    }).state('app.content.banner_photo_edit_add', {
+        url: "/banner_photo_edit_add/:bannerId/:id",
+        controller:"bannerPhotoEditCtrl",
+        templateUrl: "/admin/views/content/banner_photo_edit_add.html"
     })
 })

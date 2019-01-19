@@ -33,11 +33,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('app.content.text', {
             url: "/text",
+            controller:"articles",
             templateUrl: "/admin/views/content/content_text.html"
         })
         .state('app.content.text_edit_add', {
-            url: "/text_edit_add",
+            url: "/text_edit_add/:id",
+            controller:"articleEdit",
             templateUrl: "../admin/views/content/text_edit_add.html"
+        })
+        .state('app.content.text_check', {
+            url: "/text_check",
+            templateUrl: "../admin/views/content/text_check.html"
         })
         .state('access', {
             url: '/access',

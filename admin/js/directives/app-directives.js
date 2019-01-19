@@ -499,7 +499,46 @@ directiveModule.directive("wangEditor", function () {
             ];
             editor.config.customUpload = true;  // 设置自定义上传的开关
             editor.config.dynamicMap = false;
-            editor.config.customUploadInit = uploadLocalInit;
+            editor.config.customUploadInit = function(){
+                  // this 即 editor 对象
+    var editor = this;
+    // 触发选择文件的按钮的id
+    var btnId = editor.customUploadBtnId;
+    // 创建上传对象
+    $("#" + btnId).change(function () {
+        var file = $(this).find('input').get(0).files[0];
+        var name_ext = file.name.split('.').pop();
+        var storeAs = GUID() + "." + name_ext;
+        console.log(storeAs);
+        var formData = new FormData();
+        var name = $("input").val();
+        formData.append("file", file);
+        formData.append("name", storeAs);
+            
+        $.ajax({
+            url: scope.$parent.app.BaseUrl+'/upload/image',
+            type: 'POST',
+            data: formData,
+            // 告诉jQuery不要去处理发送的数据
+            processData: false,
+            // 告诉jQuery不要去设置Content-Type请求头
+            contentType: false,
+            beforeSend: function () {
+                console.log("正在进行，请稍候");
+            }, success: function (response) {
+                if (response.sucflag) {
+                    editor.command(null, 'insertHtml', '<img src="' +scope.$parent.app.BaseUrl+ response.filepath + '"/>')
+                } else {
+                    console.log("失败");
+                }
+            }, error: function (response) {
+                console.log("error");
+            }
+        });
+    });
+            };
+            // editor.config.uploadImgUrl = scope.$parent.app.BaseUrl+"/upload/image";
+            
             editor.create();
             /**
              * 绑定数据更新时触发
@@ -535,8 +574,9 @@ function uploadLocalInit() {
         var name = $("input").val();
         formData.append("file", file);
         formData.append("name", storeAs);
+            
         $.ajax({
-            url: '/upload/img',
+            url: scope.$parent.app.BaseUrl+'/upload/image',
             type: 'POST',
             data: formData,
             // 告诉jQuery不要去处理发送的数据
@@ -547,7 +587,7 @@ function uploadLocalInit() {
                 console.log("正在进行，请稍候");
             }, success: function (response) {
                 if (response.sucflag) {
-                    editor.command(null, 'insertHtml', '<img src="' + response.filepath + '"/>')
+                    editor.command(null, 'insertHtml', '<img src="' +scope.$parent.app.BaseUrl+ response.filepath + '"/>')
                 } else {
                     console.log("失败");
                 }

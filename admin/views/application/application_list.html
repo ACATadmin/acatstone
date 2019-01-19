@@ -48,9 +48,10 @@
                     <th class="text-center">应用编号</th>
                     <th class="text-center">应用名称</th>
                     <th class="text-center">开发者</th>
-                    <th class="text-center">使用次数</th>
-                    <th class="text-center">版本号</th>
-                    <th class="text-center">更新时间</th>
+                    <!-- <th class="text-center">使用次数</th> -->
+                    <!-- <th class="text-center">版本号</th> -->
+                    <th class="text-center">应用类型</th>
+                    <!-- <th class="text-center">更新时间</th> -->
                     <th class="text-center">发布时间</th>
                     <th class="text-center">状态</th>
                     <th class="text-center">操作</th>
@@ -61,14 +62,18 @@
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.author}}</td>
-                    <td>{{item.useCount}}</td>
-                    <td>{{item.appversion}}</td>
-                    <td>{{item.releaseTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <!-- <td>{{item.useCount}}</td> -->
+                    <!-- <td>{{item.appversion}}</td> -->
+                    <td ng-if="item.type == 0">官方</td>
+                    <td ng-if="item.type == 1">第三方</td>
+                    <!-- <td>{{item.releaseTime | date:'yyyy-MM-dd HH:mm:ss'}}</td> -->
                     <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td class="text-success" ng-if="item.status==1">上架</td>
                     <td class="text-success" ng-if="item.status==0">下架</td>
                     <td>
-                        <a security-html security-id="5b30c9328d6a72c52a9e8559" class="m-l-xs m-r-xs text-success" ng-click="editapp(item)">编辑</a>
+                        <a ng-if="item.type == 0" security-html security-id="5b30c9328d6a72c52a9e8559" class="m-l-xs m-r-xs text-success" ng-click="editapp(item)">编辑</a>
+                        <a ng-if="item.type == 1" security-html security-id="5b30c9328d6a72c52a9e8559" class="m-l-xs m-r-xs text-success" ui-sref="app.application.editother({id:item.id})">编辑</a>
+                        <a ng-if="item.id==20181205001" class="m-l-xs m-r-xs text-success" ui-sref="app.application.indexConfig">配置</a>
                         <a security-html security-id="5b30c9328d6a72c52a9e855a" class="m-l-xs m-r-xs text-success" ng-click="shelf(item)" ng-if="item.status==0">上架</a>
                         <a security-html security-id="5b30c9328d6a72c52a9e855b" class="m-l-xs m-r-xs text-success" ng-click="dropoff(item)" ng-if="item.status==1">下架</a>
                     </td>

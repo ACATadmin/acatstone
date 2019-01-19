@@ -4,7 +4,7 @@
             <span class="text-muted">banner管理</span>
         </li>
     </ul>
-    <button class="btn btn-sm btn-default pull-right w-xs">
+    <button ng-click="reflushAll()" class="btn btn-sm btn-default pull-right w-xs">
         <i class="fa fa-refresh"></i>
         <span>刷新</span>
     </button>
@@ -18,15 +18,11 @@
         </div>
         <div class="panel-body clearfix">
             <div class="inline padder-lg">
-                <label class="m-r-sm">应用编号:</label>
-                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用编号">
-            </div>
-            <div class="inline padder-lg">
-                <label class="m-r-sm">应用名称:</label>
-                <input type="text" class="input-sm form-control w-sm inline v-middle" placeholder="请输入应用名称">
+                <label class="m-r-sm">广告位名称:</label>
+                <input type="text" ng-model="search.name"  class="input-sm form-control w-sm inline v-middle" placeholder="请输入广告位名称">
             </div>
             <div class="pull-right">
-                <button class="btn btn-sm btn-default w-xs" type="button">查询结果</button>
+                <button class="btn btn-sm btn-default w-xs" ng-click="selectPage(0)" type="button">查询结果</button>
             </div>
         </div>
     </div>
@@ -35,19 +31,18 @@
         <div class="panel-heading clearfix">
             <div class="pull-left" style="padding-top: 5px">
                 <i class="fa fa-list "></i>
-                <span class="v-bottom">banner列表</span>
+                <span class="v-bottom">广告位列表</span>
             </div>
-            <div class="pull-right">
+            <!-- <div class="pull-right">
                 <button class="btn btn-sm btn-default m-l w-xs" type="button" security-html security-id="5b320cf78d6a53d451bbd566" ui-sref="app.content.banner_edit_add">添加
                 </button>
-            </div>
+            </div> -->
         </div>
         <div class="table-responsive">
             <table class="table table-bordered  b-t b-light text-center">
                 <thead style="background-color: #F9FAFC">
                 <tr>
-                    <th class="text-center">主题</th>
-                    <th class="text-center">链接</th>
+                    <th class="text-center">名称</th>
                     <th class="text-center">位置</th>
                     <th class="text-center">状态</th>
                     <th class="text-center">更新时间</th>
@@ -57,15 +52,16 @@
                 <tbody>
                 <tr ng-repeat="item in items">
                     <td>{{item.name}}</td>
-                    <td>{{item.urlpath}}</td>
-                    <td>{{item.location}}</td>
-                    <td>{{item.status}}</td>
+                    <td ng-if="item.bannerLocation=='nav'">导航栏</td>
+                    <td ng-if="item.bannerLocation!='nav'">{{item.bannerLocation}}</td>
+                    <td ng-if="item.status==0">未上架</td>
+                    <td ng-if="item.status==1">已上架</td>
                     <td>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td>
-                        <a class="m-l-xs m-r-xs text-success">查看</a>
-                        <a class="m-l-xs m-r-xs text-success" security-html security-id="5b320cf78d6a53d451bbd565" ui-sref="app.content.banner_edit_add">编辑</a>
-                        <a security-html security-id="5b320cf78d6a53d451bbd567" class="m-l-xs m-r-xs text-success"  ng-if="item.status==0">上架</a>
-                        <a security-html security-id="5b320cf78d6a53d451bbd568" class="m-l-xs m-r-xs text-success"  ng-if="item.status==1">下架</a>
+                        <!-- <a class="m-l-xs m-r-xs text-success">查看</a> -->
+                        <a class="m-l-xs m-r-xs text-success" security-html security-id="5b320cf78d6a53d451bbd565" ui-sref="app.content.banner_edit_add({id:item.id})">编辑</a>
+                        <a security-html security-id="5b320cf78d6a53d451bbd567" class="m-l-xs m-r-xs text-success" ng-click="shelf(item)"  ng-if="item.status==0">上架</a>
+                        <a security-html security-id="5b320cf78d6a53d451bbd568" class="m-l-xs m-r-xs text-success"  ng-click="dropoff(item)" ng-if="item.status==1">下架</a>
                     </td>
                 </tr>
                 </tbody>

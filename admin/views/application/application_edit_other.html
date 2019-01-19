@@ -1,0 +1,218 @@
+<div class="bg-light lter b-b wrapper-xl padder-v-sm clearfix">
+    <ul class="breadcrumb pull-left">
+        <li class="b-l b-l-5x b-l-success padder m-t-xs">
+            <span class="text-muted">第三方应用编辑</span>
+        </li>
+    </ul>
+    <button class="btn btn-sm btn-default pull-right" ng-click="goback()">
+        <i class="fa fa-mail-reply"></i>
+        <span>返回</span>
+    </button>
+</div>
+
+<div class="wrapper-xl">
+    <div class="panel panel-default">
+        <div class="panel-heading">第三方应用编辑</div>
+        <div class="panel-body">
+            <form class="form-horizontal w-auto-xs" style="width: 900px;margin: 0 auto">
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用编号：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" disabled placeholder="应用编号(后台生成)">
+                        </div>
+                    </div>
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用名称：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.name" placeholder="应用名称">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.name">应用名不能为空!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            开发者：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.author" placeholder="开发者">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.author">开发者不能为空!</span>
+
+                        </div>
+                    </div>
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            版本号：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.appversion" placeholder="版本号">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.appversion">版本号不能为空!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            发布时间：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.createTime" datepicker-popup is-open="stimeOpened" disabled="disabled"
+                                datepicker-options="dateOptions">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openstime($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.createTime">发布时间不能为空!</span>
+
+                        </div>
+                    </div>
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用排序：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="number" class="form-control" ng-model="item.sort" placeholder="数字越大排在前面">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.createTime">应用排序不能为空!</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                   
+                </div>
+                <div class="form-group" ng-init="findAllType();">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用类型：
+                        </label>
+                        <div class="col-sm-7">
+                            <select ng-model="item.apptype" class="form-control" ng-select="item.apptype == ot.id" ng-options="ot.id as ot.name for ot in listtype">
+                            </select>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.createTime">应用类型必须选择!</span>
+
+                        </div>
+                    </div>
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用标签：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.price" placeholder="应用标签">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.price">应用标签不能为空!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full-2">
+                        <label class="col-sm-4 control-label">
+                            <em class="text-danger">*</em>
+                            应用链接：
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" ng-model="item.url" placeholder="应用链接">
+                            <span class="help-block text-danger text-xs" ng-show="!validate.url">应用链接不能为空!</span>
+                        </div>
+                    </div>
+                    <div class="pull-left w-full-2">
+                            <label class="col-sm-4 control-label">
+                                <em class="text-danger">*</em>
+                                应用免费次数：
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="number" class="form-control" ng-model="item.useCount" placeholder="应用免费次数">
+                                <span class="help-block text-danger text-xs" ng-show="!validate.useCount">免费次数不能为空!</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full">
+                        <label class="col-sm-2 control-label">
+                            <em class="text-danger">*</em>
+                            应用solgan：
+                        </label>
+                        <div class="col-sm-7">
+                            <textarea type="text" class="form-control" rows="3" ng-model="item.solgan" placeholder=""></textarea>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.solgan">solgan不能为空!</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full">
+                        <label class="col-sm-2 control-label">
+                            <em class="text-danger">*</em>
+                            应用简介：
+                        </label>
+                        <div class="col-sm-7">
+                            <textarea type="text" class="form-control" rows="6" ng-model="item.summary" placeholder=""></textarea>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.summary">solgan不能为空!</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full">
+                        <label class="col-sm-2 control-label">
+                            <em class="text-danger">*</em>
+                            应用图标：
+                            <br>（建议52*52）
+                        </label>
+                        <div class="col-sm-7" upload-localimg upload-file="icon" ng-model="item.icon">
+                            <div class="thumb viewPic">
+                                <img src="/admin/img/add_img.png" alt="" class="">
+                            </div>
+                            <div class="inline v-bottom file_btn fileUpload">
+                                <button class="btn btn-addon btn-sm btn-success" style="position: relative">
+                                    <i class="fa fa-arrow-circle-o-up"></i>
+                                    上传
+                                    <input type="file" id="icon" accept="image/*">
+                                </button>
+                            </div>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.icon">应用图标不能为空!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-left w-full">
+                        <label class="col-sm-2 control-label">
+                            <em class="text-danger">*</em>
+                            应用截图：
+                            <br>（建议400*180）
+                        </label>
+                        <div class="col-sm-7" upload-localimg upload-file="appScreens" ng-model="item.appScreens">
+                            <div class="thumb viewPic">
+                                <img src="/admin/img/add_img.png" alt="" class="">
+                            </div>
+                            <div class="inline v-bottom file_btn fileUpload">
+                                <button class="btn btn-addon btn-sm btn-success" style="position: relative">
+                                    <i class="fa fa-arrow-circle-o-up"></i>
+                                    上传
+                                    <input type="file" id="appScreens" accept="image/*">
+                                </button>
+                            </div>
+                            <span class="help-block text-danger text-xs" ng-show="!validate.appScreens">应用截图不能为空!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-success w-sm" ng-click="save()">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

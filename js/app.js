@@ -1,5 +1,5 @@
 var app = angular.module('app', [
-    'ui.router', 'app-directive', 'ui.bootstrap', 'ui.load', 'app-modal'
+    'ui.router', 'app-directive', 'ui.bootstrap', 'ui.load', 'app-modal','angular-google-analytics'
 ])
 
 app.factory('httpInterceptor', function ($q, $injector,$location) {
@@ -12,7 +12,7 @@ app.factory('httpInterceptor', function ($q, $injector,$location) {
             // if(sessionStorage.getItem("X-Auth-Token-H5")!=null){
             //     config.headers["x-auth-token"] = sessionStorage.getItem("X-Auth-Token-H5");
             // }
-            config.headers["x-auth-token"] = sessionStorage.getItem("X-Auth-Token-H5");
+            config.headers["x-auth-token"] = localStorage.getItem("X-Auth-Token-H5");
             console.log("request:"+config.headers["x-auth-token"])
             // ...
             return config || $q.when(config);
@@ -35,7 +35,7 @@ app.factory('httpInterceptor', function ($q, $injector,$location) {
             // ....
             if(response.headers("x-auth-token")!=null){
                 console.log("response:"+response.headers("x-auth-token"))
-                sessionStorage.setItem("X-Auth-Token-H5", response.headers("x-auth-token"));
+                localStorage.setItem("X-Auth-Token-H5", response.headers("x-auth-token"));
             }
             // console.log($location.absUrl());
             return response || $q.when(reponse);

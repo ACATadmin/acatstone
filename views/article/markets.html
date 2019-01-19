@@ -16,6 +16,13 @@
     </a>
     <!-- / brand -->
 </div>
+<div class="banner">
+    <div ng-if="flag==1" owl-carousel class="owl-carousel img-wrap" id="owl-item">
+        <a owl-carousel-item ng-repeat="item in items"  href="{{item.urlpath}}" class="item"><img ng-src="{{app.BaseUrl+item.bannerimg}}" class="img-responsive"></a>
+    </div>
+    <!-- ng-src="{{app.BaseUrl+item.bannerimg}}" -->
+    <img ng-if="flag==0" src="img/marketbg.png" alt="">
+</div>
 <div class="blog-post markets">
     <div class="wrapper">
         <div class="panel padder-v no-border no-radius no-shadow m-b-none">
@@ -31,8 +38,10 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a ui-sref-active="text-danger" ui-sref="app.article1">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article1"> -->
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.text_list({type:2})"> -->
+                        <a ui-sref-active="text-danger" ui-sref="app.text_list({type:2})">
                         <i>
                             <img src="img/nav2.png" alt="">
                         </i>
@@ -42,8 +51,9 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a ui-sref-active="text-danger" ui-sref="app.article2">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article2"> -->
+                    <a ui-sref-active="text-danger" ui-sref="app.text_list({type:3})">
                         <i>
                             <img src="img/nav3.png" alt="">
                         </i>
@@ -53,8 +63,9 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a ui-sref-active="text-danger" ui-sref="app.article3">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article3"> -->
+                    <a ui-sref-active="text-danger" ui-sref="app.text_list({type:4})">
                         <i>
                             <img src="img/nav4.png" alt="">
                         </i>
@@ -64,9 +75,9 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-
-                    <a ui-sref-active="text-danger" ui-sref="app.article4">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article4"> -->
+                    <a ui-sref-active="text-danger" ui-sref="app.text_list({type:5})">
                         <i>
                             <img src="img/nav5.png" alt="">
                         </i>
@@ -76,19 +87,21 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a ui-sref-active="text-danger" ui-sref="app.article5">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article5"> -->
+                    <a ui-sref-active="text-danger" ui-sref="app.text_list({type:6})">
                         <i>
                             <img src="img/nav6.png" alt="">
                         </i>
                         <div class="text">
-                            <p>Multi-D</p>
+                            <p>Multi</p>
                             <p>Data</p>
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a ui-sref-active="text-danger" ui-sref="app.article6">
+                <li class="list-group-item has-on">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article6"> -->
+                    <a ui-sref-active="text-danger" ui-sref="app.text_list({type:7})">
                         <i>
                             <img src="img/nav7.png" alt="">
                         </i>
@@ -98,9 +111,10 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item has-on">
 
-                    <a ui-sref-active="text-danger" ui-sref="app.article7">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article7"> -->
+                            <a ui-sref-active="text-danger" ui-sref="app.text_list({type:8})">
                         <i>
                             <img src="img/nav8.png" alt="">
                         </i>
@@ -110,21 +124,23 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item has-on">
 
-                    <a ui-sref-active="text-danger" ui-sref="app.article8">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article8"> -->
+                            <a ui-sref-active="text-danger" ui-sref="app.text_list({type:9})">
                         <i>
                             <img src="img/nav9.png" alt="">
                         </i>
                         <div class="text">
-                            <p>Trading-D</p>
+                            <p>Trading</p>
                             <p>Tools</p>
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item has-on">
 
-                    <a ui-sref-active="text-danger" ui-sref="app.article9">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article9"> -->
+                            <a ui-sref-active="text-danger" ui-sref="app.text_list({type:10})">
                         <i>
                             <img src="img/nav10.png" alt="">
                         </i>
@@ -134,9 +150,10 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item has-on">
 
-                    <a ui-sref-active="text-danger" ui-sref="app.article10">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article10"> -->
+                            <a ui-sref-active="text-danger" ui-sref="app.text_list({type:11})">
                         <i>
                             <img src="img/nav11.png" alt="">
                         </i>
@@ -146,9 +163,10 @@
                         </div>
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item has-on">
 
-                    <a ui-sref-active="text-danger" ui-sref="app.article11">
+                    <!-- <a ui-sref-active="text-danger" ui-sref="app.article11"> -->
+                        <a ui-sref-active="text-danger" ui-sref="app.text_list({type:12})">
                         <i>
                             <img src="img/nav12.png" alt="">
                         </i>

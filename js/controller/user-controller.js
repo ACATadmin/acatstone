@@ -329,4 +329,46 @@ app.controller("registerCtl", function ($scope, $http, $state, modal, $modal) {
             })
 
         }
-    });
+    }).controller("cost",function($scope,$http){
+        $scope.page = 0
+        $scope.items = [];
+        $scope.loadData = function(page){
+            $scope.loading = true;
+            $scope.last = false
+            $http.get($scope.app.BaseUrl + "/api/purchase?page="+page).success(function(response){
+                $scope.items = $scope.items.concat(response.data.content)
+                $scope.loading = false;
+                $scope.last = response.data.last
+                if(!$scope.last){
+                    $scope.page ++ 
+                }
+            }).error(function(data){
+                    layer.msg(data.msg, {
+                        offset: ['90%', '33%']
+                    });
+                $scope.loading = false;
+            })
+        }
+        $scope.loadData(0)
+    }).controller("recharge",function($scope,$http){
+        $scope.page = 0
+        $scope.items = [];
+        $scope.loadData = function(page){
+            $scope.last = false
+            $scope.loading = true;
+            $http.get($scope.app.BaseUrl + "/api/recharge?page="+page).success(function(response){
+                $scope.last = response.data.last
+                $scope.items = $scope.items.concat(response.data.content)
+                $scope.loading = false;
+                if(!$scope.last){
+                    $scope.page ++ 
+                }
+            }).error(function(data){
+                    layer.msg(data.msg, {
+                        offset: ['90%', '33%']
+                    });
+                $scope.loading = false;
+            })
+        }
+        $scope.loadData($scope.page)
+    })

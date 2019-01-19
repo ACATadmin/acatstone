@@ -56,12 +56,14 @@
                     <td>{{item.freeCount}}</td>
                     <td ng-if="item.source==1">PC</td>
                     <td ng-if="item.source==0">H5</td>
+                    <td ng-if="item.source==2">后台</td>
                     <td>{{item.registTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td>{{item.lastLoginTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td class="text-success" ng-if="item.status==1">启用</td>
                     <td class="text-success" ng-if="item.status==0">禁用</td>
                     <td>
                         <a security-html security-id="5b30c9328d6a72c52a9e8554" class="m-l-xs m-r-xs text-success" ng-click="editUser(item)">编辑</a>
+                        <a security-html security-id="5b98f62725ac5f521d492ccd" class="m-l-xs m-r-xs text-success" ng-click="rechargeUser(item)">充值</a>
                         <a security-html security-id="5b30c9328d6a72c52a9e8556" class="m-l-xs m-r-xs text-success" ng-click="enable(item)" ng-if="item.status==0">启用</a>
                         <a security-html security-id="5b30c9328d6a72c52a9e8555" class="m-l-xs m-r-xs text-success" ng-click="disable(item)" ng-if="item.status==1">禁用</a>
                     </td>

@@ -32,6 +32,14 @@ app.controller("users", function ($scope, $http, $state, modal, $modal) {
             id: item.id
         });
     }
+
+    //充值@loyin
+    $scope.rechargeUser = function (item) {
+        $state.go("app.user.recharge", {
+            id: item.id
+        });
+    }
+
     //启用用户
     $scope.enable = function (item) {
         modal.dialog("您确定要启用此用户吗？", function () {
@@ -78,8 +86,99 @@ app.controller("users", function ($scope, $http, $state, modal, $modal) {
             alert(data.message);
         })
     }
+
+
+    //充值 by loyin
+    $scope.recharge = function () {
+        //充值
+        if($scope.item.freeCount <0 ||$scope.item.freeCount >999){
+            alert("免费次数只能为0到999!");
+            return
+        }
+        $http.put($scope.app.BaseUrl + "/admin/user", $scope.item).success(function (response) {
+            alert("充值成功!");
+            $state.go("app.user.list");
+        }).error(function (data) {
+            alert(data.message);
+        })
+    }
+
     //返回
     $scope.goback = function () {
         $state.go("app.user.list");
+    }
+}).controller("userrecharge",function($scope,$state,$http,$stateParams){
+    $scope.apps = []
+    $http.get($scope.app.BaseUrl + "/admin/application/select").success(function (response) {
+        $scope.apps = response.data;
+    }).error(function (data) {
+        alert(data.message);
+    })
+
+    $scope.userRecharge = function(){
+        if($scope.item.appId == ""){
+            alert("请选择充值产品！");
+            return
+        }
+        console.log($scope.item.appId+":"+$scope.item.rechargeCount)
+        if($scope.item.count <0 ||$scope.item.count >9999){
+            alert("充值次数只能为0到9999!");
+            return
+        }
+        $scope.item.userId = $stateParams.id
+        $http.put($scope.app.BaseUrl + "/admin/recharge/",$scope.item).success(function(response){
+            alert("充值成功")
+            $state.go("app.user.rechargelist");
+        }).error(function(data){
+            alert(data.message);
+        })
+    }
+    //返回
+    $scope.goback = function () {
+        $state.go("app.user.list");
+    }
+}).controller("rechargeList",function($scope,$http){
+    $scope.search = {
+        "username": "",
+        "employeename": ""
+    };
+    $scope.selectPage = function (page) {
+        $http.get($scope.app.BaseUrl + "/admin/recharge?page=" + page + "&username=" + $scope.search.username + "&employeename=" + $scope.search.employeename).success(function (response) {
+            $scope.items = response.data.content;
+            $scope.number = response.data.number + 1;
+            $scope.totalPages = response.data.totalPages;
+            $scope.totalElements = response.data.totalElements;
+            $scope.size = response.data.size;
+        }).error(function (data) {
+            alert(data.message);
+        })
+    }
+
+     //刷新-重置搜索框
+     $scope.reflushAll = function () {
+        $scope.search.username = "";
+        $scope.search.employeename = "";
+        $scope.selectPage(0);
+    }
+}).controller("costList",function($scope,$http){
+    $scope.search = {
+        "username": "",
+    };
+    $scope.selectPage = function (page) {
+        $http.get($scope.app.BaseUrl + "/admin/cost?page=" + page + "&username=" + $scope.search.username).success(function (response) {
+            $scope.items = response.data.content;
+            $scope.number = response.data.number + 1;
+            $scope.totalPages = response.data.totalPages;
+            $scope.totalElements = response.data.totalElements;
+            $scope.size = response.data.size;
+        }).error(function (data) {
+            alert(data.message);
+        })
+    }
+
+     //刷新-重置搜索框
+     $scope.reflushAll = function () {
+        $scope.search.username = "";
+        $scope.selectPage(0);
     }
 })

@@ -21,9 +21,26 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="js/modules/angular-bootstrap-nav-tree/abn_tree.css" type="text/css" />
     <link rel="stylesheet" href="js/fullPage/jquery.fullPage.css" type="text/css" />
+    <link rel="stylesheet" href="js/libs/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/libs/owlcarousel/assets/owl.theme.default.min.css">
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KD7L5CP');
+    </script>
+        
 </head>
 
 <body ng-controller="AppCtrl">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD7L5CP" 
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
     <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
         ui-view></div>
 
@@ -42,8 +59,9 @@
     <script src="js/angular/angular.min.js"></script>
     <script src="js/angular/angular-locale_zh-cn.js"></script>
 
+    <script src="js/angular/angular-google-analytics.min.js"></script>
     <!-- App -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=3"></script>
     <script src="js/config.js"></script>
 
     <script src="js/angular/angular-animate/angular-animate.js"></script>
@@ -53,18 +71,25 @@
 
     <script src="js/directives/ui-filter.js"></script>
 
+    <script src="js/echarts4.1/echarts.min.js"></script>
 
     <!-- controller loading -->
-    <script type="text/javascript" src="js/controller/echarts-controller.js?v=2"></script>
-    <script src="js/controller/home_controller.js?v=2"></script>
-    <script src="js/controller/application-controller.js?v=2"></script>
-    <script src="js/controller/user-controller.js?v=2"></script>
-    <script src="js/controller/nav-controller.js?v=2"></script>
+    <script type="text/javascript" src="js/controller/echarts-controller.js"></script>
+    <script src="js/controller/home_controller.js"></script>
+    <script src="js/controller/application-controller.js"></script>
+    <script src="js/controller/user-controller.js"></script>
+    <script src="js/controller/nav-controller.js"></script>
+    <script src="js/controller/media-controller.js"></script>
+    <script src="js/controller/markets-controller.js"></script>
+    <script src="js/controller/riskm-controller.js"></script>
+    <script src="js/controller/indices-controller.js"></script>
 
     <!-- router loading -->
     <script src="js/config-router.js?v=3"></script>
     <script src="js/router/application-router.js"></script>
     <script src="js/router/user-router.js"></script>
+    <script src="js/router/indices-router.js"></script>
+    <script src="js/router/risk-router.js"></script>
 
     <script src="js/main.js?v=3"></script>
     <script src="js/services/ui-load.js"></script>
@@ -75,7 +100,9 @@
     <script src="js/directives/ui-module.js"></script>
 
     <script src="js/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="js/angular/angular-iscroll.js"></script>
 
+    <script src="js/libs/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- directives -->
     <script type="text/javascript" src="js/directives/app-directives.js"></script>

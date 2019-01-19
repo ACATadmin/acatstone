@@ -1,3 +1,11 @@
+/* 重置fieldset（表单分组）、图片的边框为0*/
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
 .app-content-body {
   padding-bottom: 0;
 }
@@ -35,7 +43,7 @@
   position: relative;
 }
 .list-ul .list_head {
-  padding-bottom: .16rem;
+  margin-bottom: .16rem;
   font-weight: 400;
   font-size: .32rem;
   color: #212121;
@@ -98,6 +106,7 @@
   font-stretch: normal;
   margin: 0;
   padding-bottom: .27rem;
+  line-height: .41rem;
 }
 .blog-post .blog_text {
   color: #757575;
@@ -106,6 +115,7 @@
   font-style: normal;
   font-stretch: normal;
   font-weight: 400;
+  line-height: .34rem;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -118,7 +128,7 @@
 .blog-post .btn-danger {
   border-radius: 0;
   width: 3.66rem;
-  height: .8rem;
+  /* height: .8rem; */
   background: #ff5722;
   color: #757575;
   font-family: Athelas;
@@ -148,6 +158,7 @@
 }
 .notes {
   font-size: .24rem;
+  background-color: #211F1F;
   color: #1D2D3C;
   padding: .28rem 0;
   margin: 0;
@@ -560,7 +571,6 @@
   line-height: .37rem;
   font-family: Athelas;
   letter-spacing: -0.004rem;
-
 }
 .lacktime .mc .ptxt4 span {
   color: #FF5722;
@@ -611,11 +621,562 @@
   font-weight: bold;
   font-family: Arial;
   font-size: .36rem;
-  margin-bottom: .36rem;
+  margin-bottom: .25rem;
 }
-.haslogin .logout {
-  color: #FF5722;
+.haslogin a {
+  display: block;
   font-weight: bold;
   font-size: .36rem;
   font-family: Arial;
+  margin-bottom: .25rem;
+}
+.haslogin a.logout {
+  color: #FF5722;
+}
+.banner img {
+  width: 100%;
+}
+.mediaItem .wrapper {
+  padding: 0;
+}
+.mediaItem .mt {
+  padding: .26rem .26rem;
+}
+.mediaItem .mt ul {
+  overflow: hidden;
+  padding: 0;
+  margin-left: -0.19rem;
+}
+.mediaItem .mt li {
+  width: 1.6rem;
+  height: .53rem;
+  line-height: .53rem;
+  float: left;
+  list-style: none;
+  margin-left: .19rem;
+  text-align: center;
+  border-radius: 4px;
+  background: #f3f3f3;
+  font-size: .24rem;
+  color: #919191;
+  font-family: Arial;
+}
+.mediaItem .mt li.on {
+  background: #FF5722;
+  color: #fff;
+}
+.mediaItem .mc ul {
+  padding: 0;
+}
+.mediaItem .mc ul > li {
+  list-style: none;
+  overflow: hidden;
+  background: url("../img/shadowbg.png") no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+}
+.mediaItem .mc ul > li .img-box {
+  width: 2.85rem;
+  height: 1.94rem;
+  float: left;
+}
+.mediaItem .mc ul > li .img-box img {
+  width: 100%;
+  height: 100%;
+}
+.mediaItem .mc ul > li .txt-box {
+  margin-left: 2.85rem;
+  padding: .32rem .32rem 0 .2rem;
+}
+.mediaItem .mc ul > li .txt-box p {
+  font-family: Athelas;
+  font-size: .32rem;
+  line-height: .38rem;
+  color: #000;
+  ext-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: .3rem;
+  height: .76rem;
+}
+.mediaItem .mc ul > li .txt-box .userinfo {
+  color: #919191;
+  font-family: Arial;
+  font-size: .22rem;
+}
+.mediaItem .mc ul > li .txt-box .userinfo img {
+  width: .17rem;
+  margin-right: .1rem;
+  vertical-align: baseline;
+}
+.mediaItem .mc ul > li .txt-box .userinfo span {
+  margin-right: .1rem;
+}
+.mediaItem .mc ul > li.opts {
+  border: none;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  text-align: center;
+  background: transparent;
+}
+.mediaItem .mc ul > li.opts .loadingGif {
+  width: .5rem;
+  vertical-align: middle;
+}
+.mediaItem .mc ul > li.opts .moreImg {
+  width: .26rem;
+}
+.mediaItem .mc ul > li.opts span {
+  margin-left: .15rem;
+  font-family: "PingFang SC";
+  font-size: .28rem;
+  color: #000;
+}
+.mediaDetail .wrapper {
+  padding: 0 ;
+  padding-bottom: 1rem !important;
+}
+.mediaDetail .mt {
+  padding: .35rem .3rem .28rem;
+  border-bottom: 1px solid #EFF0F1;
+}
+.mediaDetail .mt .tit {
+  font-size: .32rem;
+  color: #000;
+  line-height: .38rem;
+  font-family: Athelas;
+}
+.mediaDetail .mt .userinfo {
+  color: #919191;
+  font-family: Arial;
+  font-size: .22rem;
+}
+.mediaDetail .mt .userinfo img {
+  width: .17rem;
+  margin-right: .1rem;
+  vertical-align: baseline;
+}
+.mediaDetail .mt .userinfo span {
+  margin-right: .1rem;
+}
+.mediaDetail .mc {
+  padding: .2rem .3rem;
+}
+.mediaDetail .mc p {
+  font-family: Athelas;
+  font-size: .28rem;
+  color: #757575;
+  line-height: .34rem;
+  letter-spacing: 0.007rem;
+  margin-bottom: .3rem;
+}
+.mediaDetail .mb {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.mediaDetail .mb button {
+  width: 3rem;
+  height: .58rem;
+  border: none;
+  border-radius: 4px;
+  margin: 0 .05rem;
+}
+.mediaDetail .mb button span {
+  width: 2.44rem;
+  display: inline-block;
+  ext-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-align: left;
+  font-size: .24rem;
+}
+.mediaDetail .mb button.btn-prev {
+  color: #919191;
+  padding-left: .49rem;
+  background: #f3f3f3 url("../img/prev.png") no-repeat;
+  background-size: .13rem .22rem;
+  background-position: .12rem center;
+}
+.mediaDetail .mb button.btn-next {
+  padding-right: .49rem;
+  background: #ff5722 url("../img/next.png") no-repeat;
+  background-size: .13rem .22rem;
+  background-position: 2.7rem center;
+  color: #fff;
+}
+.costList .wrapper,
+.rechargeList .wrapper {
+  padding: 0;
+}
+.costList .mt,
+.rechargeList .mt {
+  padding: .3rem;
+  border-bottom: 1px solid #EFF0F1;
+}
+.costList .mt p,
+.rechargeList .mt p {
+  font-size: .48rem;
+  color: #000;
+  font-family: Arial;
+  line-height: .53rem;
+  margin: 0;
+}
+.costList .mc ul,
+.rechargeList .mc ul {
+  padding: 0;
+}
+.costList .mc ul li,
+.rechargeList .mc ul li {
+  overflow: hidden;
+  list-style: none;
+  padding: 0 0 0 .3rem;
+}
+.costList .mc ul .icon-box,
+.rechargeList .mc ul .icon-box {
+  float: left;
+  width: .42rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+}
+.costList .mc ul .icon-box img,
+.rechargeList .mc ul .icon-box img {
+  width: .42rem;
+  height: .42rem;
+}
+.costList .mc ul .txt-box,
+.rechargeList .mc ul .txt-box {
+  margin-left: .6rem;
+  padding: 0.2rem 1rem 0 0;
+  position: relative;
+  border-bottom: 1px solid #EFF0F1;
+}
+.costList .mc ul .txt-box .title,
+.rechargeList .mc ul .txt-box .title {
+  color: #212121;
+  font-family: Arial;
+  font-size: .26rem;
+  line-height: .32rem;
+  ext-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.costList .mc ul .txt-box .time,
+.rechargeList .mc ul .txt-box .time {
+  font-family: Arial;
+  color: #919191;
+  font-size: .24rem;
+  line-height: .24rem;
+}
+.costList .mc ul .txt-box .price,
+.rechargeList .mc ul .txt-box .price {
+  color: #FF5722;
+  font-size: .32rem ;
+  line-height: .36rem;
+  font-family: Arial;
+  position: absolute;
+  right: .25rem;
+  top: .45rem;
+}
+.costList .mc ul .opts,
+.rechargeList .mc ul .opts {
+  border: none;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.costList .mc ul .opts .loadingGif,
+.rechargeList .mc ul .opts .loadingGif {
+  width: .5rem;
+  vertical-align: middle;
+}
+.costList .mc ul .opts .moreImg,
+.rechargeList .mc ul .opts .moreImg {
+  width: .26rem;
+}
+.costList .mc ul .opts span,
+.rechargeList .mc ul .opts span {
+  margin-left: .15rem;
+  font-family: "PingFang SC";
+  font-size: .28rem;
+  color: #000;
+}
+.opts.list-group-item {
+  font-size: .28rem;
+}
+.opts.list-group-item img {
+  height: .28rem;
+  margin-right: 10px;
+}
+.b-bg {
+  background: #000 !important;
+}
+.selectPage .wrapper {
+  padding: .27rem .17rem 1.39rem !important;
+}
+.selectPage .select-wrap > ul {
+  padding: 0;
+  overflow: hidden;
+  margin-left: -0.08rem;
+}
+.selectPage .select-wrap li {
+  margin-left: .08rem;
+  float: left;
+  margin-bottom: 0.09rem;
+}
+.selectPage .select-wrap li a {
+  display: block;
+  width: 1.368rem;
+  height: .98rem;
+  text-align: center;
+  border-radius: .06rem ;
+  font-family: Arial;
+  background: #17191d;
+  color: #90a1b7;
+}
+.selectPage .select-wrap li a > i {
+  margin: .11rem 0 .09rem;
+  display: inline-block;
+}
+.selectPage .select-wrap li a > i img {
+  width: .5rem;
+  height: .5rem;
+}
+.selectPage .select-wrap li a p {
+  font-size: .16rem;
+  line-height: .18rem;
+}
+.selectPage .select-wrap li.select a {
+  border: 1px solid #ff5722;
+  background: transparent;
+}
+.selectPage .btn-danger {
+  border-radius: .09rem;
+  padding: .19rem 0;
+  height: auto;
+}
+.selectPage .btn-danger i {
+  vertical-align: middle;
+}
+.selectPage .btn-danger span {
+  font-size: .36rem;
+  font-family: Arial;
+  margin-left: .1rem;
+  height: .4rem;
+  line-height: .4rem;
+  vertical-align: middle;
+}
+.selectPage .free_times {
+  padding-bottom: 0.31rem;
+}
+.comparePage .wrapper {
+  padding: 0 !important;
+}
+.comparePage h3.tit {
+  margin: 0;
+  background: #272626;
+  color: #ffffff;
+  font-family: Arial;
+  padding: .3rem;
+  font-size: .32rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: .37rem;
+}
+.comparePage .info {
+  background: #211f1f;
+  padding: .25rem .22rem .23rem;
+  display: flex;
+  justify-content: space-around;
+}
+.comparePage .info > a {
+  color: #9b9b9b;
+  font-style: italic;
+  font-size: .18rem;
+  line-height: .21rem;
+  letter-spacing: 0.014rem;
+}
+.comparePage .info > a i {
+  height: .18rem;
+}
+.comparePage .info > a i img {
+  height: .18rem;
+}
+.comparePage .name {
+  background: #272626;
+  font-size: .32rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: .37rem;
+  text-align: center;
+  padding: .28rem 0 .31rem;
+  margin-top: .2rem;
+}
+.comparePage .notes {
+  background: #211f1f;
+  padding: .32rem .44rem .22rem;
+  color: #efeded;
+  font-family: Athelas;
+  font-size: .28rem;
+  line-height: .36rem;
+  margin-bottom: .2rem;
+}
+.comparePage .notes p {
+  margin: 0;
+}
+.comparePage .warning {
+  position: relative;
+  padding: .37rem .46rem .35rem;
+  background: #211f1f;
+  margin-top: .21rem;
+}
+.comparePage .warning > i {
+  position: absolute;
+  top: 50%;
+  left: .77rem;
+  display: inline-block;
+  margin-top: -0.25rem;
+}
+.comparePage .warning > i img {
+  width: .5rem;
+  height: .5rem;
+}
+.comparePage .warning .warnings {
+  margin-left: 1.26rem;
+  color: #ff5722;
+  font-family: Arial;
+  font-size: .19rem;
+  font-weight: 700;
+  line-height: .32rem;
+}
+.comparePage .lists {
+  display: flex;
+  justify-content: space-between;
+  padding: .49rem .26rem .5rem;
+  background: #211F1F;
+  margin-bottom: .19rem;
+}
+.comparePage .lists .item a {
+  width: 1.62rem;
+  height: .52rem;
+  line-height: .52rem;
+  display: block;
+  border: 1px solid #c8c7c7;
+  text-align: center;
+  color: #fff;
+  font-size: .24rem;
+  border-radius: .04rem;
+}
+.comparePage .lists .item.selected a {
+  border: none;
+  background: url("../img/btn-risk.png") no-repeat;
+  background-size: 100% 100%;
+}
+.comparePage .faqs {
+  background-color: #211F1F;
+  padding: .24rem 0 .3rem .4rem;
+}
+.comparePage .faqs ul {
+  background-color: #211F1F;
+  margin: 0;
+  padding: 0;
+}
+.comparePage .faqs li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: .1rem 0 .15rem;
+}
+.comparePage .faqs li:last-child {
+  border-bottom: none;
+}
+.comparePage .faqs li p {
+  padding-right: .3rem;
+}
+.comparePage .faqs li .q {
+  font-size: .19rem;
+  line-height: .32rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+.comparePage .faqs li .a {
+  font-size: .19rem;
+  line-height: .32rem;
+  color: #9f9e9e;
+  font-family: "Arial";
+  font-weight: bold;
+}
+.comparePage .echartI {
+  padding: .25rem 0 .45rem ;
+}
+.indiceDPage .blog_text {
+  margin-bottom: .7rem;
+}
+.indiceDPage .btn-danger {
+  border-radius: .09rem;
+  padding: .19rem 0;
+  height: auto;
+}
+.indiceDPage .btn-danger i {
+  vertical-align: middle;
+}
+.indiceDPage .btn-danger span {
+  font-size: .36rem;
+  font-family: Arial;
+  margin-left: .1rem;
+  height: .4rem;
+  line-height: .4rem;
+  vertical-align: middle;
+}
+.indiceDPage .free_times {
+  padding-bottom: 0.31rem;
+}
+.riskDPage .btn-danger {
+  border-radius: .09rem;
+  padding: .19rem 0;
+  height: auto;
+}
+.riskDPage .btn-danger i {
+  vertical-align: middle;
+}
+.riskDPage .btn-danger span {
+  font-size: .36rem;
+  font-family: Arial;
+  margin-left: .1rem;
+  height: .4rem;
+  line-height: .4rem;
+  vertical-align: middle;
+}
+.riskDPage .free_times {
+  padding-bottom: 0.31rem;
+}
+.wrapper.l-version {
+  padding-top: .4rem !important;
+  padding-bottom: .39rem !important;
+  width: 100%;
+  position: fixed;
+  bottom: 1rem;
+  font-size: .26rem;
+  color: #212121;
+  background: #fff;
+}
+.wrapper.l-version.l-version-d {
+  bottom: 0;
+}
+.wrapper.l-version.b-bg {
+  border-color: #6d6d6d;
+  color: #b2b2b2;
+}
+img {
+  max-width: 100%;
+}
+.owl-controls {
+  display: none;
 }

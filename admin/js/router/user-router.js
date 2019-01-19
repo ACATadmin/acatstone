@@ -16,5 +16,17 @@ app.config(function ($urlRouterProvider, $stateProvider) {
             url: "/edit/:id",
             controller:"user",
             templateUrl: "/admin/views/user/user_edit.html?v=1"
+        }).state('app.user.recharge', {
+            url: "/recharge/:id",
+            controller:"userrecharge",
+            templateUrl: "/admin/views/user/user_recharge.html?v=1"
+        }).state('app.user.rechargelist', {
+            url: "/rechargelist",
+            controller:"rechargeList",
+            templateUrl: "/admin/views/user/recharge_list.html"
+        }).state('app.user.costlist', {
+            url: "/costlist",
+            controller:"costList",
+            templateUrl: "/admin/views/user/cost_list.html"
         })
 })

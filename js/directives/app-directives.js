@@ -1185,6 +1185,22 @@ directiveModule.directive("wangEditor", function () {
         }
     }
 });
+
+directiveModule.directive('htmlShow',function(){
+    return {
+        require: 'ngModel',
+        restrict:'E',
+        link:function(scope, elem, attrs, _ngmodel){
+          _ngmodel.$render = function () {
+              if (_ngmodel.$viewValue == null || typeof(_ngmodel.$viewValue) == "undefined"||_ngmodel.$viewValue == ""){
+                  return;
+              } else {
+                  elem.html(_ngmodel.$viewValue);
+              }
+          };
+        }
+    }
+  })
 function uploadLocalInit() {
     // this 即 editor 对象
     var editor = this;
@@ -1311,3 +1327,27 @@ function GUID() {
 function s4() {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 };
+
+directiveModule.directive("owlCarousel", function () {
+    return {
+        restrict: "EA",
+        link: function (scope, element, attrs) {
+            scope.initCarousel = function() {
+                $(element).owlCarousel({
+                    items: 1,
+                    autoplay: true,
+                    nav: false,
+                    dots: false
+                  });//初始化owlCarousel插件
+            }
+          }
+        }
+});
+
+directiveModule.directive('owlCarouselItem',function(){
+    return function(scope) {
+        if (scope.$last) {
+           scope.initCarousel();
+        }
+       };
+})

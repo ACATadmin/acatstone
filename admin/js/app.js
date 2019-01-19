@@ -32,7 +32,9 @@ app.factory('httpInterceptor', function ($q, $injector) {
             // 进行预处理
             // console.log(response.headers("x-auth-token"));
             // response.headers("x-auth-token")
-            // localStorage.setItem("X-Auth-Token","");
+            if (response.headers("x-auth-token") != null) {
+                sessionStorage.setItem("X-Auth-Token", response.headers("x-auth-token"));
+            }
             // ....
             return response || $q.when(reponse);
         },

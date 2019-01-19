@@ -1,0 +1,89 @@
+<div class="navbar-header box-shadow-lg {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs text-danger" id="btn" ui-sref="app.media">
+        <!--<i class="inline text " style="width: .38rem">-->
+        <!--<img src="img/GroupNormal.png" alt="" class="img-responsive">-->
+        <!--</i>-->
+        <i class="inline" style="width:.4rem;">
+            <img src="img/back.png" alt="" class="img-responsive"> </i>
+    </button>
+    <!-- brand -->
+    <a ui-sref="app.home" class="navbar-brand" style="font-size:15px;">
+        <span class="">
+            <img src="img/logo.png" alt="." class=> </span>
+        <!--<span class="hidden-folded m-l-xs" style="font-style:italic;">{{app.name}}</span>-->
+    </a>
+    <!-- / brand -->
+</div>
+<div class="blog-post mediaDetail">
+    <div class="wrapper">
+        <div class="mt">
+            <p class="tit">
+            {{item.articleT.title}}
+            </p>
+
+            <div class="userinfo">
+                <img src="img/user.png" alt="">
+                <span>{{item.articleT.source}}</span>
+                <span>
+                    {{item.articleT.releasTime | date:'yyyy-MM-dd'}}
+                </span>
+            </div>
+        </div>
+        <div class="mc">
+            <html-show ng-model="item.articleT.content"></html-show>
+        </div>
+        <div class="mb">
+            <button ng-show="!item.last"  class="btn-prev">
+                <span>
+                    
+                </span>
+            </button>
+            <button ng-show="item.last" ui-sref="app.detail({id:item.lastId})" class="btn-prev">
+                    <span>
+                        {{item.lastName}}
+                    </span>
+                </button>
+            <button ng-show="!item.next" class="btn-next2">
+                <span>
+                    {{item.nextName}}
+                </span>
+            </button>
+            <button ng-show="item.next" ui-sref="app.detail({id:item.nextId})" class="btn-next2">
+                    <span>
+                        {{item.nextName}}
+                    </span>
+                </button>
+        </div>
+        <div class="banner">
+            <div ng-if="flag==1" owl-carousel class="owl-carousel img-wrap" id="owl-item">
+                <a owl-carousel-item ng-repeat="photo in photos"  href="{{photo.urlpath}}" class="item" ><img ng-src="{{app.BaseUrl+photo.bannerimg}}" class="img-responsive"></a>
+            </div>
+            <img ng-if="flag==0" src="img/mediabg.png" alt="">
+            <!-- <a href="{{item.urlpath}}"><img ng-if="flag" ng-src="{{app.BaseUrl+item.bannerimg}}" alt=""></a> -->
+        </div>
+    </div>
+    <div class="footer" ng-controller="footerCtrl">
+        <ul>
+            <li>
+                <a ui-sref="app.markets">
+                    <img src="img/markets.png" alt="">
+                    <!--<img src="img/markets.png" alt="">-->
+                    <p>Markets</p>
+                </a>
+            </li>
+            <li class="active">
+                <a ui-sref="app.media">
+                    <img src="img/media-a.png" alt="">
+                    <p>Media</p>
+                </a>
+            </li>
+            <li >
+                <a ng-click="goLogin()">
+                    <img src="img/me.png" alt="">
+                    <!--<img src="img/me.png" alt="" >-->
+                    <p>Me</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

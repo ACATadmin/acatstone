@@ -75,15 +75,32 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('app.media', {
             url: "/media/media",
+            controller:"media",
             templateUrl: "/views/media/media.html"
+        })
+        .state('app.detail', {
+            url: "/media/detail/:id",
+            controller:"mediaDetail",
+            templateUrl: "/views/media/media_detail.html"
         })
         .state('app.markets', {
             url: "/article/markets",
+            controller:"markets",
             templateUrl: "/views/article/markets.html"
         })
         .state('app.lacktime', {
             url: "/lacktime/lacktime/:appid,:type",
             controller:"lacktimeController",
             templateUrl: "/views/lacktime/lacktime.html?v=2"
+        })
+        .state('app.cost', {
+            url: "/cost/cost",
+            controller:"cost",
+            templateUrl: "/views/cost/cost_list.html"
+        })
+        .state('app.recharge', {
+            url: "/cost/recharge",
+            controller:"recharge",
+            templateUrl: "/views/cost/recharge_list.html"
         })
 })

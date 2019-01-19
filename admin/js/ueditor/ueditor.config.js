@@ -30,36 +30,37 @@
         UEDITOR_HOME_URL: URL
 
         // 服务器统一请求接口路径
-        , serverUrl: "/ueditor/controller"
+        , serverUrl: "https://acatstore-api.alphacat.io/ueditor/controller"
+        // , serverUrl: "http://47.92.79.48:28080/ueditor/controller"
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
-        // , toolbars: [[
-        //     'fullscreen', 'source', '|', 'undo', 'redo', '|',
-        //     'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-        //     'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-        //     'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-        //     'directionalityltr', 'directionalityrtl', 'indent', '|',
-        //     'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
-        //     'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-        //     'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
-        //     'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-        //     'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-        //     'print', 'preview', 'searchreplace', 'drafts', 'help'
-        // ]]
-        , toolbars: [
-            [
-                'bold','italic','underline','forecolor','backcolor','|',
-                'fontfamily','fontsize','paragraph','|',
-                'spechars','justifyleft','justifycenter','justifyright','link','unlink','horizontal','|',
-                'removeformat','formatmatch','pasteplain','|',
-                'emotion','music','insertimage','attachment'
-            ],
-            [
-                'source','|',
-                'inserttable','deletetable','mergeright','mergedown','splittorows','splittocols','splittocells','mergecells','insertcol','insertrow','deletecol','deleterow','insertparagraphbeforetable','|',
-                'print','preview','|','insertcode'
-            ]
-        ]
+        , toolbars: [[
+            'fullscreen', 'source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+            'print', 'preview', 'searchreplace', 'drafts', 'help'
+        ]]
+        // , toolbars: [
+        //     [
+        //         'bold','italic','underline','forecolor','backcolor','|',
+        //         'fontfamily','fontsize','paragraph','|',
+        //         'spechars','justifyleft','justifycenter','justifyright','link','unlink','horizontal','|',
+        //         'removeformat','formatmatch','pasteplain','|',
+        //         'emotion','music','insertimage','attachment'
+        //     ],
+        //     [
+        //         'source','|',
+        //         'inserttable','deletetable','mergeright','mergedown','splittorows','splittocols','splittocells','mergecells','insertcol','insertrow','deletecol','deleterow','insertparagraphbeforetable','|',
+        //         'print','preview','|','insertcode'
+        //     ]
+        // ]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
         //    'anchor':'', 'undo':''
@@ -289,13 +290,13 @@
         //当输入的字符数超过该值时，保存一次现场
         //,maxInputCount:1
 
-        //autoHeightEnabled
+        // autoHeightEnabled:true
         // 是否自动长高,默认true
-        //,autoHeightEnabled:true
+        ,autoHeightEnabled:false
 
         //scaleEnabled
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)
-        //,scaleEnabled:false
+        // ,scaleEnabled:false
         //,minFrameWidth:800    //编辑器拖动时最小宽度,默认800
         //,minFrameHeight:220  //编辑器拖动时最小高度,默认220
 

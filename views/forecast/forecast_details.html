@@ -61,11 +61,24 @@
             </p> -->
         </div>
         <div class="text-center">
-            <button class="btn btn-lg btn-danger" ng-click="goDetails(item.id)">
+            <button ng-if="item.apptype==1" class="btn btn-lg btn-danger" ng-click="goDetails(item)">
                 <i class="inline" style="width: .41rem">
                     <img src="img/Page1Normal_3.png" alt="" class="img-responsive">
                 </i>
-                <span class="font-bold" style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Forecast</span>
+                <span ng-if="item.type==0" class="font-bold" style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Forecast</span>
+                <span ng-if="item.type!=0" class="font-bold" style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Preview</span>
+            </button>
+            <button ng-if="item.id==20181205001" class="btn btn-lg btn-danger" ui-sref="app.indicesIndex({'appid':item.id,'type': item.apptype})">
+                    <i class="inline" style="width: .41rem">
+                        <img src="img/indice.png" alt="" class="img-responsive">
+                    </i>
+                    <span class="font-bold text-center" style="font-size: .41rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Preview</span>
+                </button>
+            <button ng-if="item.id==20181205002" class="btn btn-lg btn-danger" ui-sref="app.riskMSelect({'appid':item.id})">
+                <i class="inline" style="width: .41rem">
+                    <img src="img/icon-risk.png" alt="" class="img-responsive">
+                </i>
+                <span class="font-bold" style="font-size: .36rem;font-family: Arial;margin-left: .1rem;vertical-align: text-bottom;">Enter</span>
             </button>
 
         </div>

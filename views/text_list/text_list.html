@@ -16,8 +16,16 @@
     </a>
     <!-- / brand -->
 </div>
-<ul class="list-group no-radius list-ul" ng-repeat="item in items">
-    <li class="list-group-item  clearfix" ng-click="goDetails(item.id)">
+<div class="banner">
+    <div ng-if="flag==1" owl-carousel class="owl-carousel img-wrap" id="owl-item" >
+        <a owl-carousel-item ng-repeat="photo in photos"  href="{{photo.urlpath}}" class="item" ><img ng-src="{{app.BaseUrl+photo.bannerimg}}" class="img-responsive"></a>
+
+    </div>
+    <img  ng-if="flag==0" src="img/ycbg.png" alt="">
+    <!-- <a href="{{item.urlpath}}"><img ng-if="flag" ng-src="{{app.BaseUrl+item.bannerimg}}" alt=""></a> -->
+</div>
+<ul class="list-group no-radius list-ul mc" >
+    <li class="list-group-item  clearfix" ng-repeat="item in items" ng-click="goDetails(item)">
         <a href="" class=" thumb pull-left  list_icon">
             <img ng-src="{{app.BaseUrl+item.icon}}" alt="">
         </a>
@@ -35,6 +43,18 @@
             <div class="list_text">{{item.solgan}}
             </div>
         </div>
+    </li>
+    <li ng-show="loading" class=" list-group-item  opts text-center">
+        <img src="img/loading.gif" alt="" class="loadingGif">
+        <span style="font-size:14px;">
+            loading
+        </span>
+    </li>
+    <li  ng-click="loadData(page)" ng-hide="loading || last"  class="list-group-item  opts text-center">
+        <img src="img/more-down.png" alt="" class="moreImg">
+        <span style="font-size:14px;">
+            read more
+        </span>
     </li>
 </ul>
 <div class="wrapper b-t" style="font-size: .26rem;color:#212121 ">

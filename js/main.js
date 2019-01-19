@@ -14,7 +14,7 @@ angular.module('app')
             $scope.app = {
                 name: 'alphacat',
                 version: '1.0',
-                alphacatVersion:'© 2018 ACAT Store Alpha V1.5.2',
+                alphacatVersion:'© 2018 ACAT Store Alpha V1.7.0',
                 // for chart colors
                 color: {
                     primary: '#7266ba',
@@ -40,8 +40,8 @@ angular.module('app')
                 realname: "",
                 permissions: {},
                 BaseUrl:"https://acatstore-api.alphacat.io"
-                // BaseUrl:"http://120.55.171.133:28082"
-                // BaseUrl:"http://127.0.0.1:8080"
+                // BaseUrl:"http://47.92.79.48:28080"
+                // BaseUrl:"http://localhost:8080"
 
             }
 

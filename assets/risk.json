@@ -1,0 +1,254 @@
+[
+    {
+        "coinId": "bitcoin",
+        "coin_name": "Bitcoin",
+        "symbol": "BTC"
+    },
+    {
+        "coinId": "ripple",
+        "coin_name": "XRP",
+        "symbol": "XRP"
+    },
+    {
+        "coinId": "ethereum",
+        "coin_name": "Ethereum",
+        "symbol": "ETH"
+    },
+    {
+        "coinId": "eos",
+        "coin_name": "EOS",
+        "symbol": "EOS"
+    },
+    {
+        "coinId": "bitcoin-cash",
+        "coin_name": "Bitcoin Cash",
+        "symbol": "BCH"
+    },
+    {
+        "coinId": "stellar",
+        "coin_name": "Stellar",
+        "symbol": "XLM"
+    },
+    {
+        "coinId": "tether",
+        "coin_name": "Tether",
+        "symbol": "USDT"
+    },
+    {
+        "coinId": "litecoin",
+        "coin_name": "Litecoin",
+        "symbol": "LTC"
+    },
+    {
+        "coinId": "bitcoin-sv",
+        "coin_name": "Bitcoin SV",
+        "symbol": "BSV"
+    },
+    {
+        "coinId": "tron",
+        "coin_name": "TRON",
+        "symbol": "TRX"
+    },
+    {
+        "coinId": "cardano",
+        "coin_name": "Cardano",
+        "symbol": "ADA"
+    },
+    {
+        "coinId": "arbitrage",
+        "coin_name": "ARBITRAGE",
+        "symbol": "ARB"
+    },
+    {
+        "coinId": "iota",
+        "coin_name": "IOTA",
+        "symbol": "MIOTA"
+    },
+    {
+        "coinId": "digixdao",
+        "coin_name": "DigixDAO",
+        "symbol": "DGD"
+    },
+    {
+        "coinId": "monero",
+        "coin_name": "Monero",
+        "symbol": "XMR"
+    },
+    {
+        "coinId": "proximax",
+        "coin_name": "ProximaX",
+        "symbol": "XPX"
+    },
+    {
+        "coinId": "veritaseum",
+        "coin_name": "Veritaseum",
+        "symbol": "VERI"
+    },
+    {
+        "coinId": "gxchain",
+        "coin_name": "GXChain",
+        "symbol": "GXS"
+    },
+    {
+        "coinId": "binance-coin",
+        "coin_name": "Binance Coin",
+        "symbol": "BNB"
+    },
+    {
+        "coinId": "loopring",
+        "coin_name": "Loopring",
+        "symbol": "LRC"
+    },
+    {
+        "coinId": "crypto-com",
+        "coin_name": "Crypto.com",
+        "symbol": "MCO"
+    },
+    {
+        "coinId": "dash",
+        "coin_name": "Dash",
+        "symbol": "DASH"
+    },
+    {
+        "coinId": "nem",
+        "coin_name": "NEM",
+        "symbol": "XEM"
+    },
+    {
+        "coinId": "ethereum-classic",
+        "coin_name": "Ethereum Classic",
+        "symbol": "ETC"
+    },
+    {
+        "coinId": "neo",
+        "coin_name": "NEO",
+        "symbol": "NEO"
+    },
+    {
+        "coinId": "waves",
+        "coin_name": "Waves",
+        "symbol": "WAVES"
+    },
+    {
+        "coinId": "zcash",
+        "coin_name": "Zcash",
+        "symbol": "ZEC"
+    },
+    {
+        "coinId": "maker",
+        "coin_name": "Maker",
+        "symbol": "MKR"
+    },
+    {
+        "coinId": "dogecoin",
+        "coin_name": "Dogecoin",
+        "symbol": "DOGE"
+    },
+    {
+        "coinId": "tezos",
+        "coin_name": "Tezos",
+        "symbol": "XTZ"
+    },
+    {
+        "coinId": "bitcoin-gold",
+        "coin_name": "Bitcoin Gold",
+        "symbol": "BTG"
+    },
+    {
+        "coinId": "vechain",
+        "coin_name": "VeChain",
+        "symbol": "VET"
+    },
+    {
+        "coinId": "usd-coin",
+        "coin_name": "USD Coin",
+        "symbol": "USDC"
+    },
+    {
+        "coinId": "moac",
+        "coin_name": "MOAC",
+        "symbol": "MOAC"
+    },
+    {
+        "coinId": "omisego",
+        "coin_name": "OmiseGO",
+        "symbol": "OMG"
+    },
+    {
+        "coinId": "trueusd",
+        "coin_name": "TrueUSD",
+        "symbol": "TUSD"
+    },
+    {
+        "coinId": "qtum",
+        "coin_name": "Qtum",
+        "symbol": "QTUM"
+    },
+    {
+        "coinId": "ontology",
+        "coin_name": "Ontology",
+        "symbol": "ONT"
+    },
+    {
+        "coinId": "0x",
+        "coin_name": "0x",
+        "symbol": "ZRX"
+    },
+    {
+        "coinId": "buggyra-coin-zero",
+        "coin_name": "Buggyra Coin Zero",
+        "symbol": "BCZERO"
+    },
+    {
+        "coinId": "basic-attention-token",
+        "coin_name": "Basic Attention Token",
+        "symbol": "BAT"
+    },
+    {
+        "coinId": "decred",
+        "coin_name": "Decred",
+        "symbol": "DCR"
+    },
+    {
+        "coinId": "lisk",
+        "coin_name": "Lisk",
+        "symbol": "LSK"
+    },
+    {
+        "coinId": "paxos-standard-token",
+        "coin_name": "Paxos Standard Token",
+        "symbol": "PAX"
+    },
+    {
+        "coinId": "zilliqa",
+        "coin_name": "Zilliqa",
+        "symbol": "ZIL"
+    },
+    {
+        "coinId": "bitcoin-diamond",
+        "coin_name": "Bitcoin Diamond",
+        "symbol": "BCD"
+    },
+    {
+        "coinId": "pivx",
+        "coin_name": "PIVX",
+        "symbol": "PIVX"
+    },
+    {
+        "coinId": "nano",
+        "coin_name": "Nano",
+        "symbol": "NANO"
+    },
+    {
+        "coinId": "bytecoin-bcn",
+        "coin_name": "Bytecoin",
+        "symbol": "BCN"
+    },
+    {
+        "coinId": "digibyte",
+        "coin_name": "DigiByte",
+        "symbol": "DGB"
+    }
+    
+     
+]
